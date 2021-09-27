@@ -330,6 +330,7 @@ button {
     align-content: center;
     align-items: center;
     background-size: cover;
+
     background-color: rgba(34, 34, 34, 0.644);
     background-blend-mode: multiply;
 }
