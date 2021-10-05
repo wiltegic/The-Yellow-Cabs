@@ -88,13 +88,13 @@
                                     <h4 class="mb-4">Enter Your Details For Booking</h4> 
                                     <form class="text-center"> 
                                         <div class="form-group"> 
-                                            <input type="text" class="form-control rounded-0" placeholder="Enter Name"> 
-                                        </div>                                         
+                                            <input type="text" class="form-control rounded-0" placeholder="Enter Name" id="name" name="name"> 
+                                        </div>                                                                                
                                         <div class="form-group"> 
-                                            <input type="email" class="form-control rounded-0" placeholder="Enter Email"> 
-                                        </div>                                         
+                                            <input type="tel" class="form-control rounded-0" placeholder="Enter Mobile Number" id="mobile_number" name="mobile_number"> 
+                                        </div>
                                         <div class="form-group"> 
-                                            <input type="tel" class="form-control rounded-0" placeholder="Enter Mobile Number"> 
+                                            <textarea class="border-1 form-control rounded-1" rows="6" placeholder="Enter PickUp Address" id="pickup_address" name="pickup_address"></textarea> 
                                         </div>                                         
                                         <button type="submit" class="bg-warning btn btn-warning rounded-5 text-uppercase">Confirm BOOKING</button>                                         
                                     </form>                                     
