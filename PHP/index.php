@@ -1,3 +1,10 @@
+<?php
+include ("function.php");
+
+$cityArray= get_city_dropdown();
+
+
+?>
 <!DOCTYPE html> 
 <html lang="en"> 
     <head> 
@@ -34,6 +41,7 @@
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700"> 
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"> 
         <link rel="stylesheet" href="blocks.css"> 
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
         <style type="text/css">.nav-tabs .nav-link.active { color: #fff; background-color: #ffc107; }</style>         
     </head>     
     <!-- body -->     
@@ -112,11 +120,13 @@
                                 <div class=" row"> 
                                     <div class="col-md-4" style="padding-top: 15px;"> 
                                         <label class="date">FROM</label>                                         
-                                        <input class="book_n" type="text" placeholder="Enter PickUp City" name="pickup_city"> 
+                                        <!-- <input class="book_n" type="text" placeholder="Enter PickUp City" name="pickup_city">  -->
+                                        <select class="book_n" name="pickup_city" id="pickup_city"></select>
                                     </div>                                     
                                     <div class="col-md-4" style="padding-top: 15px;"> 
                                         <label class="date">TO</label>                                         
-                                        <input class="book_n" type="text" placeholder="Enter Drop City" name="drop_city"> 
+                                        <!-- <input class="book_n" type="text" placeholder="Enter Drop City" name="drop_city">  -->
+                                        <select class="book_n" name="drop_city" id="drop_city"><option value="">Enter Drop City</option></select>
                                     </div>                                     
                                     <div class="col-md-3" style="padding-top: 15px;"> 
                                         <label class="date">PICK UP DATE</label>                                         
@@ -577,9 +587,34 @@
     <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>     
     <script src="components/pg.blocks/js/plugins.js"></script>     
     <script src="components/pg.blocks/js/bskit-scripts.js"></script>     
-    <script src="https://maps.google.com/maps/api/js?sensor=true"></script>     
+    <script src="https://maps.google.com/maps/api/js?sensor=true"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> 
     <script>
         $(document).ready(function(){
+            
+            var city = <?php echo json_encode($cityArray); ?>;
+
+            var option= '';
+            for(var i=0;i<city.length;i++){
+                option +='<option value="'+city[i].id+'">'+city[i].city+', '+city[i].state+'</option>';
+            }
+            
+
+            $("#pickup_city").append(option);
+            $("#pickup_city").change(function(){
+                $("#drop_city option").remove();
+                var from_city= $(this).val();
+                if(from_city!=""){
+                    var to_option= '';
+                    to_option +=option;
+                    $("#drop_city").append(to_option);
+                    $("#drop_city option[value="+from_city+"]").hide();
+                    $("#drop_city").select2();
+                }
+                
+            });
+            $("#pickup_city").select2();
+            
             $("input[name='triptype']").click(function() {
        
                 var triptype = $(this).val();
