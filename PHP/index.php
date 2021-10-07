@@ -15,7 +15,7 @@ $cityArray= get_city_dropdown();
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <meta name="viewport" content="initial-scale=1, maximum-scale=1"> 
         <!-- site metas -->         
-        <title>The Yellow Cabs</title>         
+        <title>The Yellow Cabs | Outstation and Local Taxi Booking Service. India's Most Trusted and Affordable Cab Booking Service.</title>         
         <meta name="keywords" content=""> 
         <meta name="description" content=""> 
         <meta name="author" content=""> 
