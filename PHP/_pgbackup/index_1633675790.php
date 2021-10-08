@@ -4,7 +4,7 @@ include ("function.php");
 $cityArray= get_city_dropdown();
 
 
-?> 
+?>
 <!DOCTYPE html> 
 <html lang="en"> 
     <head> 
@@ -41,9 +41,9 @@ $cityArray= get_city_dropdown();
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700"> 
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"> 
         <link rel="stylesheet" href="blocks.css"> 
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/> 
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/bootstrap-datepicker.css"> 
-        <style type="text/css">.nav-tabs .nav-link.active { color: #fff; background-color: #ffc107; }</style>         
+        <style type="text/css">.nav-tabs .nav-link.active { color: #fff; background-color: #ffc107; }</style>     
     </head>     
     <!-- body -->     
     <body class="main-layout"> 
@@ -93,7 +93,7 @@ $cityArray= get_city_dropdown();
     <section> 
         <div class="container"> 
             <div class="row"> 
-                <div class="col-md-12"> 
+                <div class="col-md-12">
                     <!-- 
                     <form class="form_book " style="box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 5px rgba(0, 0, 0, 0.19);"> 
                         <h3 class=" mb-0 text-center"><b style="font-family: 'Poppins', sans-serif; white-space: nowrap;" class="h3">BOOK YOUR TAXI NOW</b></h3> 
@@ -181,7 +181,9 @@ $cityArray= get_city_dropdown();
                         </div>                         
                         <div class="row"> 
 </div>                         
-                    </form> -->                     
+                    </form> -->
+
+
                     <form class="form_book " style="box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 5px rgba(0, 0, 0, 0.19);"> 
                         <h3 class=" mb-0 text-center"><b style="font-family: 'Poppins', sans-serif; white-space: nowrap;" class="h3">BOOK YOUR TAXI NOW</b></h3> 
                         <ul class="nav nav-tabs" role="tablist"> 
@@ -201,7 +203,7 @@ $cityArray= get_city_dropdown();
                                 <div class="col-md-11" style="padding-top: 15px;"> 
                                     <label class="date" style="text-align: center;"> 
                                         <input type="radio" name="triptype" value="oneway" checked="checked"> Oneway
-                                    </label>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        &nbsp;&nbsp;  
+                                    </label>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        &nbsp;&nbsp;  
                                     <label class="date"> 
                                         <input type="radio" name="triptype" value="roundtrip"> RoundTrip
                                     </label>                                     
@@ -209,29 +211,31 @@ $cityArray= get_city_dropdown();
                                 <div class=" row"> 
                                     <div class="col-md-4" style="padding-top: 15px;"> 
                                         <label class="date">FROM</label>                                         
-                                        <select class="book_n" name="pickup_city" id="pickup_city"></select>                                         
+                                        
+                                        <select class="book_n" name="pickup_city" id="pickup_city"></select>
                                     </div>                                     
                                     <div class="col-md-4" style="padding-top: 15px;"> 
                                         <label class="date">TO</label>                                         
-                                        <select class="book_n" name="drop_city" id="drop_city"></select>                                         
+                                        
+                                        <select class="book_n" name="drop_city" id="drop_city"></select>
                                     </div>                                     
                                     <div class="col-md-3" style="padding-top: 15px;"> 
                                         <label class="date">PICK UP DATE</label>                                         
-                                        <input type="text" class="form-control" placeholder="Set PickUp Date" name="pickup_date" id="pickup_date" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
+                                        <input class="book_n" type="text" placeholder="Set PickUp Date" name="pickup_date" id="pickup_date"> 
                                     </div>                                     
                                 </div>                                 
                                 <div class="row"> 
                                     <div class="col-md-4" style="padding-top: 15px; display: none;"> 
                                         <label class="date">RETURN Date</label>                                         
-                                        <input class="form-control" type="text" id="return_date" name="return_date" placeholder="Set Return Date" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
+                                        <input class="book_n" type="date" id="return_date" name="return_date" placeholder="Set Return Date"> 
                                     </div>                                     
                                     <div class="col-md-4" style="padding-top: 15px;"> 
                                         <label class="date">PICK UP TIME</label>                                         
-                                        <input class="form-control" type="text" id="pickup_time" name="pickup_time" placeholder="Set PickUp Time" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
-                                    </div>                                     
+                                        <input class="book_n" type="time" id="pickup_time" name="pickup_time" placeholder="Set PickUp Time"> 
+                                    </div>
                                     <div class="col-md-4" style="padding-top: 15px;"> 
                                         <label class="date">MOBILE NUMBER</label>                                         
-                                        <input class="form-control" placeholder="Enter Your Number" type="tel" id="mobile_number" name="mobile_number" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
+                                        <input class="book_n" placeholder="Enter Your Number" type="tel" id="mobile_number" name="mobile_number"> 
                                     </div>                                     
                                     <div class="col-md-4 " style="padding-top: 15px;"> 
                                         <button class="book_btn">SELECT CAR</button>                                         
@@ -243,20 +247,20 @@ $cityArray= get_city_dropdown();
                                     <div style="padding-top: 15px;" class="col-md-8"> 
                                         <label class="date">city</label>                                         
                                         <input class="book_n" type="text" placeholder="Enter PickUp City" name="pickup_city"> 
-                                    </div>                                     
+                                    </div>
                                     <div class="col-md-3" style="padding-top: 15px;"> 
                                         <label class="date">PICK UP DATE</label>                                         
-                                        <input type="text" class="form-control" placeholder="Set PickUp Date" name="pickup_date" id="pickup_date" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
+                                        <input class="book_n" type="date" name="pickup_date"> 
                                     </div>                                     
                                 </div>                                 
                                 <div class="row"> 
                                     <div class="col-md-4" style="padding-top: 15px;"> 
                                         <label class="date">PICK UP TIME</label>                                         
-                                        <input class="form-control" type="text" id="pickup_time" name="pickup_time" placeholder="Set PickUp Time" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
-                                    </div>                                     
+                                        <input class="book_n" type="time" name="pickup_time"> 
+                                    </div>
                                     <div class="col-md-4" style="padding-top: 15px;"> 
                                         <label class="date">MOBILE NUMBER</label>                                         
-                                        <input class="form-control" placeholder="Enter Your Number" type="tel" id="mobile_number" name="mobile_number" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
+                                        <input class="book_n" placeholder="Enter Your Number" type="tel" name="mobile_number"> 
                                     </div>                                     
                                     <div class="col-md-4" style="padding-top: 15px;"> 
                                         <button class="book_btn">SELECT CAR</button>                                         
@@ -266,7 +270,10 @@ $cityArray= get_city_dropdown();
                         </div>                         
                         <div class="row"> 
 </div>                         
-                    </form>                     
+                    </form>
+
+
+
                 </div>                 
             </div>             
         </div>         
@@ -400,61 +407,61 @@ $cityArray= get_city_dropdown();
                     </div>                     
                 </div>                 
             </div>             
-        </section>         
-        <section class="bg-white pb-5 pt-5 text-body text-center"> 
+        </section>
+        <section class="bg-white pb-5 pt-5 text-body text-center">
             <h2 class="h6 mb-1 text-body">Explore&nbsp;</h2> 
             <h3 class="font-weight-bold h2 ">Popular Cities</h3> 
             <div class="container pb-3 position-relative pt-3 text-body"> 
                 <div class="row"> 
-                    <div class="col-6 col-md-2"> 
+                    <div class="col-6 col-md-2">
                         <a href="ahmedabad.php"><h4 class="text-body">AHMEDABAD</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
-                        <a href="surat.php"><h4 class="text-body">SURAT</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <a href="surat.php"><h4 class="text-body">SURAT</h4></a>
+                    </div>
+                    <div class="col-6 col-md-2">
                         <a href="vadodara.php"><h4 class="text-body">VADODARA</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
+                    </div>
+                    <div class="col-6 col-md-2">
                         <a href="rajkot.php"><h4 class="text-body">RAJKOT</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
+                    </div>
+                    <div class="col-6 col-md-2">
                         <a href="gadhidham.php"><h4 class="text-body">GANDHIDHAM</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
+                    </div>
+                    <div class="col-6 col-md-2">
                         <a href="mumbai.php"><h4 class="text-body">MUMBAI</h4></a> 
                     </div>                     
-                </div>                 
+                </div>
                 <div class="row"> 
-                    <div class="col-6 col-md-2"> 
+                    <div class="col-6 col-md-2">
                         <a href="pune.php"><h4 class="text-body">PUNE</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
-                        <a href="nasik.php"><h4 class="text-body">NASIK</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <a href="nasik.php"><h4 class="text-body">NASIK</h4></a>
+                    </div>
+                    <div class="col-6 col-md-2">
                         <a href="udaipur.php"><h4 class="text-body">UDAIPUR</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
+                    </div>
+                    <div class="col-6 col-md-2">
                         <a href="jaipur.php"><h4 class="text-body">JAIPUR</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
+                    </div>
+                    <div class="col-6 col-md-2">
                         <a href="bhopal.php"><h4 class="text-body">BHOPAL</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
+                    </div>
+                    <div class="col-6 col-md-2">
                         <a href="indore.php"><h4 class="text-body">INDORE</h4></a> 
                     </div>                     
                 </div>                 
             </div>             
-        </section>         
+        </section>
         <section class="bg-warning content-block-nopad footer-wrap-1-1"> 
-            <div class="container footer-1-1 pb-2 pt-3"> 
-                <h2 class="h6 mb-1 text-body text-center">Explore&nbsp;</h2> 
+            <div class="container footer-1-1 pb-2 pt-3">
+                <h2 class="h6 mb-1 text-body text-center">Explore&nbsp;</h2>
                 <h3 class="font-weight-bold h2  text-body text-center">Popular Routes</h3> 
                 <!-- /.row -->                 
             </div>             
             <!-- /.container -->             
-        </section>         
+        </section>
         <section class="content-block-nopad footer-wrap-1-1"> 
             <div class="container footer-1-1 mt-0 pt-4"> 
                 <!-- /.row -->                 
@@ -464,121 +471,121 @@ $cityArray= get_city_dropdown();
                         <ul> 
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO VADODARA</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO SURAT</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO UDAIPUR</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO UDAIPUR</li>
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO MUMBAI</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO INDORE</li>                             
                         </ul>                         
-                    </div>                     
+                    </div>
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">SURAT</h4> 
                         <ul> 
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● SURAT TO MUMBAI</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● SURAT TO AHMEDABAD</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● SURAT TO PUNE</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● SURAT TO PUNE</li>
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● SURAT TO VADODARA</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● SURAT TO INDORE</li>                             
                         </ul>                         
-                    </div>                     
+                    </div>
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">VADODARA</h4> 
                         <ul> 
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● VADODARA TO AHMEDABAD</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● VADODARA TO SURAT</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● VADODARA TO MUMBAI</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● VADODARA TO MUMBAI</li>
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● VADODARA TO UDAIPUR</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● VADODARA TO INDORE</li>                             
                         </ul>                         
-                    </div>                     
+                    </div>
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">RAJKOT</h4> 
                         <ul> 
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● RAJKOT TO AHMEDABAD</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● RAJKOT TO GANDHIDHAM</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● RAJKOT TO SURAT</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● RAJKOT TO SURAT</li>
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● RAJKOT TO BHAVNAGAR</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● RAJKOT TO MUMBAI</li>                             
                         </ul>                         
-                    </div>                     
+                    </div>
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">MUMBAI</h4> 
                         <ul> 
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● MUMBAI TO PUNE</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● MUMBAI TO LONAVALA</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● MUMBAI TO NASHIK</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● MUMBAI TO NASHIK</li>
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● MUMBAI TO SURAT</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● MUMBAI TO AHMEDABAD</li>                             
                         </ul>                         
-                    </div>                     
+                    </div>
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">PUNE</h4> 
                         <ul> 
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● PUNE TO MUMBAI</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● PUNE TO MAHABALESWAR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● PUNE TO NASHIK</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● PUNE TO NASHIK</li>
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● PUNE TO SURAT</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● PUNE TO AHMEDABAD</li>                             
                         </ul>                         
-                    </div>                     
+                    </div>
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">UDAIPUR</h4> 
                         <ul> 
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● UDAIPUR TO JODHPUR</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● UDAIPUR TO JAIPUR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● UDAIPUR TO AHMEDABAD</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● UDAIPUR TO AHMEDABAD</li>
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● UDAIPUR TO VADODARA</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● UDAIPUR TO BHILWARA</li>                             
                         </ul>                         
-                    </div>                     
+                    </div>
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">JAIPUR</h4> 
                         <ul> 
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● JAIPUR TO UDAIPUR</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● JAIPUR TO JODHPUR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● JAIPUR TO AHMEDABAD</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● JAIPUR TO AHMEDABAD</li>
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● JAIPUR TO DELHI</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● JAIPUR TO BHILWARA</li>                             
                         </ul>                         
-                    </div>                     
+                    </div>
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">INDORE</h4> 
                         <ul> 
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● INDORE TO BHOPAL</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● INDORE TO MUMBAI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● INDORE TO AHMEDABAD</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● INDORE TO AHMEDABAD</li>
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● INDORE TO VADODARA</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● INDORE TO NAGPUR</li>                             
                         </ul>                         
-                    </div>                     
+                    </div>
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">BHOPAL</h4> 
                         <ul> 
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● BHOPAL TO MUMBAI</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● BHOPAL TO INDORE</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● BHOPAL TO AHMEDABAD</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● BHOPAL TO AHMEDABAD</li>
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● BHOPAL TO UJJAIN</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● BHOPAL TO VADODARA</li>                             
                         </ul>                         
-                    </div>                     
+                    </div>
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">GANDHIDHAM</h4> 
                         <ul> 
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● GANDHIDHAM TO BHUJ</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● GANDHIDHAM TO MUNDRA</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● GANDHIDHAM TO RAJKOT</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● GANDHIDHAM TO RAJKOT</li>
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● GANDHIDHAM TO AHMEDABAD</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● GANDHIDHAM TO MUMBAI</li>                             
                         </ul>                         
-                    </div>                     
+                    </div>
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">NASHIK</h4> 
                         <ul> 
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● NASHIK TO MUMBAI</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● NASHIK TO PUNE</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● NASHIK TO VAPI</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● NASHIK TO VAPI</li>
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● NASHIK TO SURAT</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● NASHIK TO INDORE</li>                             
                         </ul>                         
-                    </div>                     
+                    </div>
                 </div>                 
             </div>             
             <!-- /.container -->             
@@ -674,9 +681,9 @@ $cityArray= get_city_dropdown();
     <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>     
     <script src="components/pg.blocks/js/plugins.js"></script>     
     <script src="components/pg.blocks/js/bskit-scripts.js"></script>     
-    <script src="https://maps.google.com/maps/api/js?sensor=true"></script>     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>     
-    <script src="js/bootstrap-datepicker.js"></script>     
+    <script src="https://maps.google.com/maps/api/js?sensor=true"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> 
+    <script src="js/bootstrap-datepicker.js"></script>
     <script>
         $('#pickup_date').datepicker({
             format: "dd/mm/yyyy",
