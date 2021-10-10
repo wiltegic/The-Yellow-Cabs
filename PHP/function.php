@@ -19,4 +19,63 @@ function get_city_dropdown(){
     return $cityArray;
 }
 
+function get_city_name($city_id){
+	global $db;
+
+	$query="SELECT * FROM `bw_city` WHERE deleted=0 and id='".$city_id."'";
+	$result= $db->query($query);
+	$row= $result->fetch_assoc();
+
+	$city= $row['name'];
+    
+    return $city;
+}
+
+function get_car_list(){
+	global $db;
+
+	$query="SELECT ap.id,ap.name,apc.name as cat_name FROM `aos_products` as ap LEFT JOIN aos_product_categories as apc on ap.aos_product_category_id=apc.id WHERE ap.deleted=0 and apc.deleted=0 ORDER BY ap.name ASC ";
+	$result= $db->query($query);
+	$carArray=array();
+	$i=0;
+	while($row= $result->fetch_assoc()){
+		$carArray[$i]['id']= $row['id'];
+		$carArray[$i]['car']= $row['name'];
+		$carArray[$i]['car_type']= $row['cat_name'];
+		$i++;
+	}
+	return $carArray;
+}
+
+function get_city_distance($from_city,$to_city,$car_id){
+	global $db;
+
+	$response= array();
+
+	if(!empty($car_id)){
+		$query1="SELECT * FROM `aos_products` LEFT JOIN aos_products_cstm on aos_products.id=aos_products_cstm.id_c WHERE aos_products.id='".$car_id."' and deleted=0 ";;
+		$result1= $db->query($query1);
+		$row1= $result1->fetch_assoc();
+		$response['rate']= (int)$row1['price'];
+		$response['minimum_range']= (int)$row1['minimum_range_c'];
+		$response['eight_hrs_rate']= (int)$row1['eight_hrs_c'];
+		$response['twelve_hrs_rate']= (int)$row1['twelve_hrs_c'];
+		$response['product_image']= $row1['product_image'];
+	}
+	$query="SELECT * FROM `bw_trips` WHERE (bw_city_id_c='".$from_city."' and bw_city_id1_c='".$to_city."') OR (bw_city_id1_c='".$from_city."' and bw_city_id_c='".$to_city."')  and deleted=0";
+	$result= $db->query($query);
+	if($result->num_rows > 0){
+		$row= $result->fetch_assoc();
+		$response['status']= "success";
+		$response['distance']= $row['distance'];
+		
+	}else{
+		$response['status']= "fail";
+		$response['message']= "No Trip Found";
+	}
+
+	return $response;
+	
+}
+
 ?>

@@ -20,7 +20,7 @@ $cityArray= get_city_dropdown();
         <meta name="description" content=""> 
         <meta name="author" content=""> 
         <!-- bootstrap css -->         
-        <link rel="stylesheet" href="css/bootstrap.min.css"> 
+        <!-- <link rel="stylesheet" href="css/bootstrap.min.css">  -->
         <!-- style css -->         
         <link rel="stylesheet" href="css/style.css"> 
         <!-- Responsive-->         
@@ -42,7 +42,9 @@ $cityArray= get_city_dropdown();
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"> 
         <link rel="stylesheet" href="blocks.css"> 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/> 
-        <link rel="stylesheet" href="css/bootstrap-datepicker.css"> 
+        <!-- <link rel="stylesheet" href="css/bootstrap-datepicker.css">  -->
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css'>
         <style type="text/css">.nav-tabs .nav-link.active { color: #fff; background-color: #ffc107; }</style>         
     </head>     
     <!-- body -->     
@@ -182,7 +184,7 @@ $cityArray= get_city_dropdown();
                         <div class="row"> 
 </div>                         
                     </form> -->                     
-                    <form class="form_book " style="box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 5px rgba(0, 0, 0, 0.19);"> 
+                    <form class="form_book " action="selectcar.php" method="post" style="box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 5px rgba(0, 0, 0, 0.19);"> 
                         <h3 class=" mb-0 text-center"><b style="font-family: 'Poppins', sans-serif; white-space: nowrap;" class="h3">BOOK YOUR TAXI NOW</b></h3> 
                         <ul class="nav nav-tabs" role="tablist"> 
                             <li class="nav-item"> 
@@ -198,71 +200,80 @@ $cityArray= get_city_dropdown();
                         </ul>                         
                         <div class="tab-content"> 
                             <div class="active pb-auto pt-1 show tab-pane" role="tabpanel" aria-labelledby="tab1-tab" id="tab1"> 
-                                <div class="col-md-11" style="padding-top: 15px;"> 
-                                    <label class="date" style="text-align: center;"> 
-                                        <input type="radio" name="triptype" value="oneway" checked="checked"> Oneway
-                                    </label>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        &nbsp;&nbsp;  
-                                    <label class="date"> 
-                                        <input type="radio" name="triptype" value="roundtrip"> RoundTrip
-                                    </label>                                     
-                                </div>                                 
-                                <div class=" row"> 
-                                    <div class="col-md-4" style="padding-top: 15px;"> 
-                                        <label class="date">FROM</label>                                         
-                                        <select class="book_n" name="pickup_city" id="pickup_city"></select>                                         
-                                    </div>                                     
-                                    <div class="col-md-4" style="padding-top: 15px;"> 
-                                        <label class="date">TO</label>                                         
-                                        <select class="book_n" name="drop_city" id="drop_city"></select>                                         
-                                    </div>                                     
-                                    <div class="col-md-3" style="padding-top: 15px;"> 
-                                        <label class="date">PICK UP DATE</label>                                         
-                                        <input type="text" class="form-control" placeholder="Set PickUp Date" name="pickup_date" id="pickup_date" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
-                                    </div>                                     
-                                </div>                                 
-                                <div class="row"> 
-                                    <div class="col-md-4" style="padding-top: 15px; display: none;"> 
-                                        <label class="date">RETURN Date</label>                                         
-                                        <input class="form-control" type="text" id="return_date" name="return_date" placeholder="Set Return Date" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
-                                    </div>                                     
-                                    <div class="col-md-4" style="padding-top: 15px;"> 
-                                        <label class="date">PICK UP TIME</label>                                         
-                                        <input class="form-control" type="text" id="pickup_time" name="pickup_time" placeholder="Set PickUp Time" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
-                                    </div>                                     
-                                    <div class="col-md-4" style="padding-top: 15px;"> 
-                                        <label class="date">MOBILE NUMBER</label>                                         
-                                        <input class="form-control" placeholder="Enter Your Number" type="tel" id="mobile_number" name="mobile_number" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
-                                    </div>                                     
-                                    <div class="col-md-4 " style="padding-top: 15px;"> 
-                                        <button class="book_btn">SELECT CAR</button>                                         
-                                    </div>                                     
-                                </div>                                 
-                            </div>                             
+
+                                    <div class="col-md-11" style="padding-top: 15px;"> 
+                                        <label class="date" style="text-align: center;"> 
+                                            <input type="radio" name="triptype" value="oneway" checked="checked"> Oneway
+                                        </label>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        &nbsp;&nbsp;  
+                                        <label class="date"> 
+                                            <input type="radio" name="triptype" value="roundtrip"> RoundTrip
+                                        </label>                                     
+                                    </div>                                 
+                                    <div class=" row"> 
+                                        <div class="col-md-4" style="padding-top: 15px;"> 
+                                            <label class="date">FROM</label>                                         
+                                            <select class="book_n" name="pickup_city" id="pickup_city" required></select>                                         
+                                        </div>                                     
+                                        <div class="col-md-4" style="padding-top: 15px;"> 
+                                            <label class="date">TO</label>                                         
+                                            <select class="book_n" name="drop_city" id="drop_city" required></select>                                         
+                                        </div>                                     
+                                        <div class="col-md-3" style="padding-top: 15px;"> 
+                                            <label class="date">PICK UP DATE</label>                                         
+                                            <input type="text" class="form-control" placeholder="Set PickUp Date" name="pickup_date" id="pickup_date" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;" required> 
+                                        </div>                                     
+                                    </div>                                 
+                                    <div class="row"> 
+                                        <div class="col-md-4" style="padding-top: 15px; display: none;"> 
+                                            <label class="date">RETURN Date</label>                                         
+                                            <input class="form-control" type="text" id="return_date" name="return_date" placeholder="Set Return Date" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
+                                        </div>                                     
+                                        <div class="col-md-4" style="padding-top: 15px;"> 
+                                            <label class="date">PICK UP TIME</label>                                         
+                                            <!-- <input class="form-control" type="text" id="pickup_time" name="pickup_time" placeholder="Set PickUp Time" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;" required>  -->
+                                            <select class="form-control" id="pickup_time" name="pickup_time" placeholder="Set PickUp Time" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;" required>
+                                                
+                                            </select>
+                                        </div>                                     
+                                        <div class="col-md-4" style="padding-top: 15px;"> 
+                                            <label class="date">MOBILE NUMBER</label>                                         
+                                            <input class="form-control" placeholder="Enter Your Number" type="tel" id="mobile_number" name="mobile_number" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;" required> 
+                                        </div>                                     
+                                        <div class="col-md-4 " style="padding-top: 15px;"> 
+                                            <input id="booking_type" name="booking_type" type="hidden" value="Outstation"/>
+                                            <button class="book_btn" type="submit" id="select_car" name="select_car">SELECT CAR</button>                                         
+                                        </div>                                     
+                                    </div>                                 
+                                
+                            </div>    
+                                                  
                             <div class="pt-1 tab-pane" role="tabpanel" aria-labelledby="tab2-tab" id="tab2"> 
                                 <div class="row"> 
                                     <div style="padding-top: 15px;" class="col-md-8"> 
                                         <label class="date">city</label>                                         
-                                        <input class="book_n" type="text" placeholder="Enter PickUp City" name="pickup_city"> 
+                                        <!-- <input class="book_n" type="text" placeholder="Enter PickUp City" name="pickup_city_local">  -->
+                                        <select class="book_n" name="pickup_city_local" id="pickup_city_local"></select>
                                     </div>                                     
                                     <div class="col-md-3" style="padding-top: 15px;"> 
                                         <label class="date">PICK UP DATE</label>                                         
-                                        <input type="text" class="form-control" placeholder="Set PickUp Date" name="pickup_date" id="pickup_date" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
+                                        <input type="text" class="form-control" placeholder="Set PickUp Date" name="pickup_date_local" id="pickup_date_local" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
                                     </div>                                     
                                 </div>                                 
                                 <div class="row"> 
                                     <div class="col-md-4" style="padding-top: 15px;"> 
                                         <label class="date">PICK UP TIME</label>                                         
-                                        <input class="form-control" type="text" id="pickup_time" name="pickup_time" placeholder="Set PickUp Time" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
+                                        <input class="form-control" type="text" id="pickup_time_local" name="pickup_time__local" placeholder="Set PickUp Time" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
                                     </div>                                     
                                     <div class="col-md-4" style="padding-top: 15px;"> 
                                         <label class="date">MOBILE NUMBER</label>                                         
-                                        <input class="form-control" placeholder="Enter Your Number" type="tel" id="mobile_number" name="mobile_number" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
+                                        <input class="form-control" placeholder="Enter Your Number" type="tel" id="mobile_number_local" name="mobile_number_local" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
                                     </div>                                     
                                     <div class="col-md-4" style="padding-top: 15px;"> 
                                         <button class="book_btn">SELECT CAR</button>                                         
                                     </div>                                     
                                 </div>                                 
-                            </div>                             
+                            </div>    
+                                                    
                         </div>                         
                         <div class="row"> 
 </div>                         
@@ -663,27 +674,33 @@ $cityArray= get_city_dropdown();
 </footer>     
     <!-- end footer -->     
     <!-- Javascript files-->     
-    <script src="js/jquery.min.js"></script>     
+    <!-- <script src="js/jquery.min.js"></script>      -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+
     <script src="js/popper.min.js"></script>     
     <script src="js/bootstrap.bundle.min.js"></script>     
-    <script src="js/jquery-3.0.0.min.js"></script>     
+    <!-- <script src="js/jquery-3.0.0.min.js"></script>      -->
     <script src="js/plugin.js"></script>     
     <!-- sidebar -->     
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>     
-    <script src="js/custom.js"></script>     
+    <script src="js/custom.js"></script> 
+    <script src="js/script.js"></script>     
     <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>     
     <script src="components/pg.blocks/js/plugins.js"></script>     
     <script src="components/pg.blocks/js/bskit-scripts.js"></script>     
     <script src="https://maps.google.com/maps/api/js?sensor=true"></script>     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>     
-    <script src="js/bootstrap-datepicker.js"></script>     
+    <!-- <script src="js/bootstrap-datepicker.js"></script>      -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js'></script>
+    <script src='https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js'></script>
+    
     <script>
-        $('#pickup_date').datepicker({
-            format: "dd/mm/yyyy",
-            minDate: 0,
-            todayHighlight: true,
-            autoclose: true,
-        });
+        // $('#pickup_date').datepicker({
+        //     format: "dd/mm/yyyy",
+        //     minDate: 0,
+        //     todayHighlight: true,
+        //     autoclose: true,
+        // });
         $(document).ready(function(){
             var city = <?php echo json_encode($cityArray); ?>;
 
@@ -694,6 +711,7 @@ $cityArray= get_city_dropdown();
             
 
             $("#pickup_city").append(option);
+            $("#pickup_city_local").append(option);
             $("#pickup_city").change(function(){
                 $("#drop_city option").remove();
                 var from_city= $(this).val();
@@ -715,6 +733,7 @@ $cityArray= get_city_dropdown();
             });
             $("#drop_city").select2();
             $("#pickup_city").select2();
+            $("#pickup_city_local").select2();
             
             $("input[name='triptype']").click(function() {
        
@@ -722,9 +741,11 @@ $cityArray= get_city_dropdown();
                 if(triptype=="roundtrip"){
                     $("#return_date").parent("div").show();
                     $("#mobile_number").parent("div").attr("class","col-md-3");
+                    $("return_date").prop('required',true);
                 }else{
                     $("#return_date").parent("div").hide();
                     $("#mobile_number").parent("div").attr("class","col-md-4");
+                    $("return_date").prop('required',false);
                 }
             }); 
         });

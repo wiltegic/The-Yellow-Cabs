@@ -1,3 +1,28 @@
+<?php
+include ("function.php");
+
+if(isset($_REQUEST['select_car'])){
+    // echo"<pre>";print_r($_REQUEST);exit;
+
+    $trip= $_REQUEST['trip'];
+    $from_city_id= $_REQUEST['from_city_id'];
+    $drop_city_id= $_REQUEST['drop_city_id'];
+    $pickup_city= $_REQUEST['pickup_city'];
+    $drop_city= $_REQUEST['drop_city'];
+    $pickup_date= $_REQUEST['pickup_date'];
+    $pickup_time= $_REQUEST['pickup_time'];
+    if(isset($_REQUEST['return_date']))$return_date= $_REQUEST['return_date'];
+    $mobile_number= $_REQUEST['mobile_number'];
+    $booking_type= $_REQUEST['booking_type'];
+    $total_fare= $_REQUEST['total_fare'];
+    $car= $_REQUEST['car'];
+    $car_id= $_REQUEST['car_id'];
+    $car_type= $_REQUEST['car_type'];
+    $distance= $_REQUEST['distance'];
+
+}
+
+?>
 <!DOCTYPE html> 
 <html lang="en" class=""> 
     <head> 
@@ -88,13 +113,13 @@
                                     <h4 class="mb-4">Enter Your Details For Booking</h4> 
                                     <form class="text-center"> 
                                         <div class="form-group"> 
-                                            <input type="text" class="form-control rounded-0" placeholder="Enter Name" id="name" name="name"> 
+                                            <input type="text" class="form-control rounded-0" placeholder="Enter Name" id="name" name="name" required> 
                                         </div>                                                                                
                                         <div class="form-group"> 
-                                            <input type="tel" class="form-control rounded-0" placeholder="Enter Mobile Number" id="mobile_number" name="mobile_number"> 
+                                            <input type="tel" class="form-control rounded-0" placeholder="Enter Mobile Number" id="mobile_number" name="mobile_number" required> 
                                         </div>
                                         <div class="form-group"> 
-                                            <textarea class="border-1 form-control rounded-1" rows="6" placeholder="Enter PickUp Address" id="pickup_address" name="pickup_address"></textarea> 
+                                            <textarea class="border-1 form-control rounded-1" rows="6" placeholder="Enter PickUp Address" id="pickup_address" name="pickup_address" required></textarea> 
                                         </div>                                         
                                         <button type="submit" class="bg-warning btn btn-warning rounded-5 text-uppercase">Confirm BOOKING</button>                                         
                                     </form>                                     
@@ -108,23 +133,25 @@
                             <ul class="list-group list-group-flush">
                                 <li class="h6 list-group-item">
                                     <span>Journey : </span>
-                                    <span>Ahmedabad &gt; Surat (Roundtrip)</span>
+                                    <span><?php echo $pickup_city; ?> &gt; <?php echo $drop_city; ?> (<?php echo ucfirst($trip); ?>)</span>
                                 </li>
                                 <li class="h6 list-group-item">
                                     <span>PickUp Date : </span>
-                                    <span> 4th October 2021 </span>
+                                    <span> <?php echo date('jS F Y', strtotime($pickup_date)); ?>  </span>
                                 </li>
-                                <li class="h6 list-group-item">
-                                    <span>Drop Date : </span>
-                                    <span> 6th October 2021 </span>
-                                </li>
+                                <?php if($trip=="roundtrip") {?>
+                                    <li class="h6 list-group-item">
+                                        <span>Drop Date : </span>
+                                        <span> <?php echo date('jS F Y', strtotime($return_date)); ?>  </span>
+                                    </li>
+                                <?php } ?>
                                 <li class="h6 list-group-item">
                                     <span>Car Type : </span>
-                                    <span> Swift or equivalent (Hatchback) </span>
+                                    <span> <?php echo $car; ?> or equivalent (<?php echo $car_type; ?>) </span>
                                 </li>
                                 <li class="h6 list-group-item">
                                     <span>Total Fare :</span>
-                                    <span> 1560 ₹ </span>
+                                    <span> <?php echo number_format($total_fare); ?> ₹ </span>
                                 </li>
                             </ul>
                         </div>

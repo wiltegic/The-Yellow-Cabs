@@ -1,3 +1,28 @@
+<?php
+include ("function.php");
+
+if(isset($_REQUEST['select_car'])){
+    // echo"<pre>";print_r($_REQUEST);exit;
+
+    $trip= $_REQUEST['triptype'];
+    $from_city_id= $_REQUEST['pickup_city'];
+    $drop_city_id= $_REQUEST['drop_city'];
+    $pickup_city= get_city_name($from_city_id);
+    $drop_city= get_city_name($drop_city_id);
+    $pickup_date= $_REQUEST['pickup_date'];
+    $pickup_time= $_REQUEST['pickup_time'];
+    $mobile_number= $_REQUEST['mobile_number'];
+    $booking_type= $_REQUEST['booking_type'];
+    if(isset($_REQUEST['return_date']))$return_date= $_REQUEST['return_date'];
+
+    $carArray= get_car_list();
+    // echo"<pre>";print_r($carArray);exit;
+
+}
+
+
+
+?>
 <!DOCTYPE html> 
 <html lang="en" class=""> 
     <head> 
@@ -77,47 +102,76 @@
     <!-- choose  section -->     
     <!-- end choose  section -->     
     <!-- our  section -->     
+    <form action="confirmbooking.php" id="selectcar_form" name="selectcar_form" method="post">
+        <input type="hidden" id="select_car" name="select_car" value="" />
+        <input type="hidden" id="from_city_id" name="from_city_id" value="<?php echo $from_city_id; ?>" />
+        <input type="hidden" id="drop_city_id" name="drop_city_id" value="<?php echo $drop_city_id; ?>" />
+        <input type="hidden" id="pickup_city" name="pickup_city" value="<?php echo $pickup_city; ?>" />
+        <input type="hidden" id="drop_city" name="drop_city" value="<?php echo $drop_city; ?>" />
+        <input type="hidden" id="trip" name="trip" value="<?php echo $trip; ?>" />
+        <input type="hidden" id="pickup_date" name="pickup_date" value="<?php echo $pickup_date; ?>" />
+        <input type="hidden" id="pickup_time" name="pickup_time" value="<?php echo $pickup_time; ?>" />
+        <input type="hidden" id="mobile_number" name="mobile_number" value="<?php echo $mobile_number; ?>" />
+        <input type="hidden" id="return_date" name="return_date" value="<?php echo $return_date; ?>" />
+        <input type="hidden" id="total_fare" name="total_fare" value="" />
+        <input type="hidden" id="car" name="car" value="" />
+        <input type="hidden" id="car_id" name="car_id" value="" />
+        <input type="hidden" id="car_type" name="car_type" value="" />
+        <input type="hidden" id="distance" name="distance" value="" />
+        
+    </form>
     <div class="our"> 
         <section class="bg-white "> 
             <div class="container pb-4 pt-0"> 
                 <div class="align-items-center bg-light row"> 
                     <div class="col-lg-8 me-auto pb-3 pt-3 text-left"> 
-                        <span class="h5">City 1</span> &nbsp; > &nbsp; 
-                        <span class="h5">City 1</span> &nbsp; 
-                        <span class="h5">(Outstation)</span>
+                        <span class="h5"><?php echo $pickup_city;  ?></span> &nbsp; > &nbsp; 
+                        <span class="h5"><?php echo $drop_city;  ?></span> &nbsp; 
+                        <span class="h5">(<?php echo ucfirst($trip); ?>)</span>
                     </div>                     
                     <div class="col-lg-2 col-6 pb-3 pt-3 text-center"> 
                         <span>PickUp</span>
                         <br/>
-                        <span class="h5">30-9-21</span>
+                        <span class="h5"><?php echo $pickup_date; ?></span>
                     </div>
                     <div class="col-lg-2 col-6 pb-3 pt-3 text-center"> 
                         <span>Time</span>
                         <br/>
-                        <span class="h5">12:45 PM</span>
+                        <span class="h5"><?php echo $pickup_time ?></span>
                     </div>                     
                 </div>                 
             </div>
             <div class="container pb-4 pt-0"> 
+                <?php 
+                    for($i=0;$i<count($carArray);$i++){
+                      $result= get_city_distance($from_city_id,$drop_city_id,$carArray[$i]['id']);
+                      $minimum_range= $result['minimum_range'];
+                      $distance= $result['distance'];
+                      if($trip=="roundtrip")$distance= ($distance*2);
+                      if($minimum_range>$result['distance']){
+                        $distance=$minimum_range;
+                      }
+                      $total= ($distance * $result['rate']);
+                ?>
                 <div class="align-items-center mb-2 ml-1 mr-1 row" style="border: 1px solid #F8BC20; border-radius: 5px;"> 
                     <div class="col-8 col-lg-4 me-auto pb-3 pt-3">
                         <div class="row">
                             <div class="col-12 col-md-3">
-                                <img src="images/swift.png" style="min-width: 150px;"/> 
+                                <img src="<?php echo $result['product_image']; ?>" style="min-width: 150px;"/> 
                             </div>
                             <div class="col-12 col-md-9 text-right">
-                                <span class="h4">Swift or equivalent</span>
-                                <div class="h5">(Hatchback)</div>
+                                <span class="h4"><?php echo $carArray[$i]['car']; ?> or equivalent</span>
+                                <div class="h5">(<?php echo $carArray[$i]['car_type']; ?>)</div>
                             </div>
                         </div>
                     </div>                     
                     <div class="col-4 col-lg-3 pb-3 pt-3 text-center">
-                        <span class="h4">1560</span>
+                        <span class="h4"><?php echo $distance; ?></span>
                         <span class="h4">KM</span>
                     </div>
                     <div class="col-6 col-lg-3 pb-3 pt-3 text-center"> 
                         <div>
-                            <span class="h4">6510</span>
+                            <span class="h4"><?php echo $total; ?></span>
                             <span class="h4">₹</span>
                         </div>
                         <div>
@@ -133,8 +187,8 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <p class="mt-0 text-left"><u>Fare :</u> 9 ₹ Per KM</p>
-                                        <p class="text-left"><u>Minimum Charged Distance :</u> 250 Kms</p>
+                                        <p class="mt-0 text-left"><u>Fare :</u> <?php echo $result['rate']; ?> ₹ Per KM</p>
+                                        <p class="text-left"><u>Minimum Charged Distance :</u> <?php echo $result['minimum_range']; ?> Kms</p>
                                         <p class="text-left"><u>Inclusion :</u> Driver Food &amp; Stay Charge</p>
                                         <p class="mb-0 text-left"><u>Exclusion :</u> Toll tax ,State tax , Parking charge , Airport Parking Charge</p>
                                     </div>
@@ -143,150 +197,10 @@
                         </div>
                     </div>
                     <div class="col-6 col-lg-2 pb-3 pt-3 text-center">
-                        <button type="button" class="btn btn-warning">Book Now</button>                         
+                        <button type="button" class="btn btn-warning" onclick="setCarvalue('<?php echo $carArray[$i]['car']; ?>','<?php echo $carArray[$i]['car_type']; ?>','<?php echo $carArray[$i]['id']; ?>','<?php echo $distance; ?>','<?php echo $total; ?>')">Book Now</button>                         
                     </div>                     
                 </div>
-                <div class="align-items-center mb-2 ml-1 mr-1 row" style="border: 1px solid #F8BC20; border-radius: 5px;"> 
-                    <div class="col-8 col-lg-4 me-auto pb-3 pt-3">
-                        <div class="row">
-                            <div class="col-12 col-md-3">
-                                <img src="images/Etios.jpg" style="min-width: 150px;"/> 
-                            </div>
-                            <div class="col-12 col-md-9 text-right">
-                                <span class="h4">Etios or equivalent</span>
-                                <div class="h5">(Sedan)</div>
-                            </div>
-                        </div>
-                    </div>                     
-                    <div class="col-4 col-lg-3 pb-3 pt-3 text-center">
-                        <span class="h4">1560</span>
-                        <span class="h4">KM</span>
-                    </div>
-                    <div class="col-6 col-lg-3 pb-3 pt-3 text-center"> 
-                        <div>
-                            <span class="h4">6510</span>
-                            <span class="h4">₹</span>
-                        </div>
-                        <div>
-                            <span class="h5"><u data-toggle="modal" data-target="#modal2">Fare Summery</u></span>
-                        </div>
-                        <div class="modal pg-show-modal fade" id="modal2">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Fare Summery</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p class="mt-0 text-left"><u>Fare :</u>&nbsp;10 ₹ Per KM</p>
-                                        <p class="text-left"><u>Minimum Charged Distance :</u> 250 Kms</p>
-                                        <p class="text-left"><u>Inclusion :</u> Driver Food &amp; Stay Charge</p>
-                                        <p class="mb-0 text-left"><u>Exclusion :</u> Toll tax ,State tax , Parking charge , Airport Parking Charge</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-2 pb-3 pt-3 text-center">
-                        <button type="button" class="btn btn-warning">Book Now</button>                         
-                    </div>                     
-                </div>
-                <div class="align-items-center mb-2 ml-1 mr-1 row" style="border: 1px solid #F8BC20; border-radius: 5px;"> 
-                    <div class="col-8 col-lg-4 me-auto pb-3 pt-3">
-                        <div class="row">
-                            <div class="col-12 col-md-3">
-                                <img src="images/Ertiga.jpg" style="min-width: 150px;"/> 
-                            </div>
-                            <div class="col-12 col-md-9 text-right">
-                                <span class="h4">Ertiga or equivalent</span>
-                                <div class="h5">(SUV)</div>
-                            </div>
-                        </div>
-                    </div>                     
-                    <div class="col-4 col-lg-3 pb-3 pt-3 text-center">
-                        <span class="h4">1560</span>
-                        <span class="h4">KM</span>
-                    </div>
-                    <div class="col-6 col-lg-3 pb-3 pt-3 text-center"> 
-                        <div>
-                            <span class="h4">6510</span>
-                            <span class="h4">₹</span>
-                        </div>
-                        <div>
-                            <span class="h5"><u data-toggle="modal" data-target="#modal2">Fare Summery</u></span>
-                        </div>
-                        <div class="modal pg-show-modal fade" id="modal2">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Fare Summery</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p class="mt-0 text-left"><u>Fare :</u>&nbsp;12 ₹ Per KM</p>
-                                        <p class="text-left"><u>Minimum Charged Distance :</u>&nbsp;300 Kms</p>
-                                        <p class="text-left"><u>Inclusion :</u> Driver Food &amp; Stay Charge</p>
-                                        <p class="mb-0 text-left"><u>Exclusion :</u> Toll tax ,State tax , Parking charge , Airport Parking Charge</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-2 pb-3 pt-3 text-center">
-                        <button type="button" class="btn btn-warning">Book Now</button>                         
-                    </div>                     
-                </div>
-                <div class="align-items-center mb-2 ml-1 mr-1 row" style="border: 1px solid #F8BC20; border-radius: 5px;"> 
-                    <div class="col-8 col-lg-4 me-auto pb-3 pt-3">
-                        <div class="row">
-                            <div class="col-12 col-md-3">
-                                <img src="images/Crysta.jpg" style="min-width: 150px;"/> 
-                            </div>
-                            <div class="col-12 col-md-9 text-right">
-                                <span class="h4">Ennova Only</span>
-                                <div class="h5">(SUV)</div>
-                            </div>
-                        </div>
-                    </div>                     
-                    <div class="col-4 col-lg-3 pb-3 pt-3 text-center">
-                        <span class="h4">1560</span>
-                        <span class="h4">KM</span>
-                    </div>
-                    <div class="col-6 col-lg-3 pb-3 pt-3 text-center"> 
-                        <div>
-                            <span class="h4">6510</span>
-                            <span class="h4">₹</span>
-                        </div>
-                        <div>
-                            <span class="h5"><u data-toggle="modal" data-target="#modal2">Fare Summery</u></span>
-                        </div>
-                        <div class="modal pg-show-modal fade" id="modal2">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Fare Summery</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p class="mt-0 text-left"><u>Fare :</u>&nbsp;14 ₹ Per KM</p>
-                                        <p class="text-left"><u>Minimum Charged Distance :</u>&nbsp;300 Kms</p>
-                                        <p class="text-left"><u>Inclusion :</u> Driver Food &amp; Stay Charge</p>
-                                        <p class="mb-0 text-left"><u>Exclusion :</u> Toll tax ,State tax , Parking charge , Airport Parking Charge</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-2 pb-3 pt-3 text-center">
-                        <button type="button" class="btn btn-warning">Book Now</button>                         
-                    </div>                     
-                </div>
+                <?php } ?>
             </div>             
         </section>         
     </div>     
@@ -378,18 +292,19 @@
     <script src="components/pg.blocks/js/bskit-scripts.js"></script>     
     <script src="https://maps.google.com/maps/api/js?sensor=true"></script>     
     <script>
+        function setCarvalue(car_name, car_type, car_id, distance, total){
+
+            $("#car").val(car_name);
+            $("#car_type").val(car_type);
+            $("#car_id").val(car_id);
+            $("#distance").val(distance);
+            $("#total_fare").val(total);
+
+            $('form#selectcar_form').submit();
+        }
         $(document).ready(function(){
-            $("input[name='triptype']").click(function() {
-       
-                var triptype = $(this).val();
-                if(triptype=="roundtrip"){
-                    $("#return_date").parent("div").show();
-                    $("#pickup_time").parent("div").attr("class","col-md-3");
-                }else{
-                    $("#return_date").parent("div").hide();
-                    $("#pickup_time").parent("div").attr("class","col-md-4");
-                }
-            }); 
+            
+            
         });
     </script>     
 </body>
