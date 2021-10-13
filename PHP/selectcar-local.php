@@ -1,3 +1,28 @@
+<?php
+include ("function.php");
+
+if(isset($_REQUEST['select_car'])){
+    // echo"<pre>";print_r($_REQUEST);exit;
+
+    $trip= $_REQUEST['triptype'];
+    $from_city_id= $_REQUEST['pickup_city_local'];
+    // $drop_city_id= $_REQUEST['drop_city'];
+    $pickup_city= get_city_name($from_city_id);
+    // $drop_city= get_city_name($drop_city_id);
+    $pickup_date= $_REQUEST['pickup_date_local'];
+    $pickup_time= $_REQUEST['pickup_time_local'];
+    $mobile_number= $_REQUEST['mobile_number_local'];
+    $booking_type= $_REQUEST['booking_type'];
+    // if(isset($_REQUEST['return_date']))$return_date= $_REQUEST['return_date'];
+
+    $carArray= get_car_list();
+    // echo"<pre>";print_r($carArray);exit;
+
+}
+
+
+
+?>
 <!DOCTYPE html> 
 <html lang="en" class=""> 
     <head> 
@@ -77,24 +102,38 @@
     <!-- choose  section -->     
     <!-- end choose  section -->     
     <!-- our  section -->     
+    <form action="confirmbooking.php" id="selectcar_form" name="selectcar_form" method="post">
+        <input type="hidden" id="select_car" name="select_car" value="" />
+        <input type="hidden" id="from_city_id" name="from_city_id" value="<?php echo $from_city_id; ?>" />
+        <input type="hidden" id="pickup_city" name="pickup_city" value="<?php echo $pickup_city; ?>" />
+        <input type="hidden" id="trip" name="trip" value="<?php echo $booking_type; ?>" />
+        <input type="hidden" id="pickup_date" name="pickup_date" value="<?php echo $pickup_date; ?>" />
+        <input type="hidden" id="pickup_time" name="pickup_time" value="<?php echo $pickup_time; ?>" />
+        <input type="hidden" id="mobile_number" name="mobile_number" value="<?php echo $mobile_number; ?>" />
+        <input type="hidden" id="total_fare" name="total_fare" value="" />
+        <input type="hidden" id="car" name="car" value="" />
+        <input type="hidden" id="car_id" name="car_id" value="" />
+        <input type="hidden" id="car_type" name="car_type" value="" />
+        <input type="hidden" id="distance" name="distance" value="" />
+        
+    </form>
     <div class="our"> 
         <section class="bg-white "> 
             <div class="container pb-3 pt-0"> 
                 <div class="align-items-center bg-light row"> 
                     <div class="col-lg-8 me-auto pb-3 pt-3 text-left"> 
-                        <span class="h5">City 1</span> &nbsp; > &nbsp; 
-                        <span class="h5">City 1</span> &nbsp; 
-                        <span class="h5">(Local)</span>
+                        <span class="h5"><?php echo $pickup_city;  ?></span>  &nbsp; > &nbsp; 
+                        <span class="h5">(<?php echo $booking_type; ?>)</span>
                     </div>                     
                     <div class="col-lg-2 col-6 pb-3 pt-3 text-center"> 
                         <span>PickUp</span>
                         <br/>
-                        <span class="h5">30-9-21</span>
+                        <span class="h5"><?php echo $pickup_date; ?></span>
                     </div>
                     <div class="col-lg-2 col-6 pb-3 pt-3 text-center"> 
                         <span>Time</span>
                         <br/>
-                        <span class="h5">12:45 PM</span>
+                        <span class="h5"><?php echo $pickup_time ?></span>
                     </div>                     
                 </div>                 
                 <ul class="mb-3 mt-2 nav nav-justified nav-tabs" id="pills-tab" role="tablist">
@@ -109,15 +148,20 @@
             <div class="container pb-4 pt-0"> 
                 <div class="tab-content" id="pills-tabContent">
                     <div class="active fade pt-0 show tab-pane" id="pills-8" role="tabpanel" aria-labelledby="pills-8-tab">
+                    <?php 
+                        for($i=0;$i<count($carArray);$i++){
+                            $eight_hrs= $carArray[$i]['eight_hrs'];
+                            $rate= $carArray[$i]['rate'];
+                    ?>
                         <div class="align-items-center mb-2 ml-1 mr-1 row" style="border: 1px solid #F8BC20; border-radius: 5px;"> 
                             <div class="col-8 col-lg-4 me-auto pb-3 pt-3">
                                 <div class="row">
                                     <div class="col-12 col-md-3">
-                                        <img src="images/Etios.jpg" style="min-width: 150px;"/> 
+                                        <img src="<?php echo $carArray[$i]['product_image']; ?>" style="min-width: 150px;"/> 
                                     </div>
                                     <div class="col-12 col-md-9 text-right">
-                                        <span class="h4">Etios or equivalent</span>
-                                        <div class="h5">(Sedan)</div>
+                                        <span class="h4"><?php echo $carArray[$i]['car']; ?> or equivalent</span>
+                                        <div class="h5">(<?php echo $carArray[$i]['car_type']; ?>)</div>
                                     </div>
                                 </div>
                             </div>                             
@@ -131,13 +175,13 @@
                             </div>
                             <div class="col-6 col-lg-3 pb-3 pt-3 text-center"> 
                                 <div>
-                                    <span class="h4">1600</span>
+                                    <span class="h4"><?php echo $eight_hrs; ?></span>
                                     <span class="h4">₹</span>
                                 </div>
                                 <div>
-                                    <span class="h5"><u data-toggle="modal" data-target="#modal2">Fare Summery</u></span>
+                                    <span class="h5"><u data-toggle="modal" data-target="#modal8_<?php echo $i; ?>">Fare Summery</u></span>
                                 </div>
-                                <div class="modal pg-show-modal fade" id="modal2">
+                                <div class="modal pg-show-modal fade" id="modal8_<?php echo $i; ?>">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -147,7 +191,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <p class="mt-0 text-left"><u>Extra KM :</u>&nbsp;10 ₹ Per KM</p>
+                                                <p class="mt-0 text-left"><u>Extra KM :</u>&nbsp;<?php echo $rate; ?> ₹ Per KM</p>
                                                 <p class="text-left"><u>Extra Hour :</u> 150&nbsp;₹ Per Hour</p>
                                                 <p class="text-left"><u>Inclusion :</u>&nbsp;Driver Allowance</p>
                                                 <p class="mb-0 text-left"><u>Exclusion :</u>&nbsp;Parking charge , Airport Parking Charge,&nbsp;Toll tax , State tax</p>
@@ -157,122 +201,26 @@
                                 </div>
                             </div>
                             <div class="col-6 col-lg-2 pb-3 pt-3 text-center">
-                                <button type="button" class="btn btn-warning">Book Now</button>                                 
+                                <button type="button" class="btn btn-warning" onclick="setCarvalue('<?php echo $carArray[$i]['car']; ?>','<?php echo $carArray[$i]['car_type']; ?>','<?php echo $carArray[$i]['id']; ?>','8_Hrs_80_KM','<?php echo $eight_hrs; ?>')">Book Now</button>                                 
                             </div>                             
                         </div>
-                        <div class="align-items-center mb-2 ml-1 mr-1 row" style="border: 1px solid #F8BC20; border-radius: 5px;"> 
-                            <div class="col-8 col-lg-4 me-auto pb-3 pt-3">
-                                <div class="row">
-                                    <div class="col-12 col-md-3">
-                                        <img src="images/Ertiga.jpg" style="min-width: 150px;"/> 
-                                    </div>
-                                    <div class="col-12 col-md-9 text-right">
-                                        <span class="h4 text-nowrap">Ertiga or equivalent</span>
-                                        <div class="h5 text-nowrap">(SUV)</div>
-                                    </div>
-                                </div>
-                            </div>                             
-                            <div class="col-4 col-lg-3 pb-3 pt-3 text-center">
-                                <div>
-                                    <span class="h4">Includes 80 KM</span>
-                                </div>
-                                <div>
-                                    <span class="h5">And 8 Hours</span>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-3 pb-3 pt-3 text-center"> 
-                                <div>
-                                    <span class="h4">2200</span>
-                                    <span class="h4">₹</span>
-                                </div>
-                                <div>
-                                    <span class="h5"><u data-toggle="modal" data-target="#modal2">Fare Summery</u></span>
-                                </div>
-                                <div class="modal pg-show-modal fade" id="modal2">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Fare Summery</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p class="mt-0 text-left"><u>Extra KM :</u>&nbsp;12 ₹ Per KM</p>
-                                                <p class="text-left">Extra Hour : 150 ₹ Per Hour</p>
-                                                <p class="text-left"><u>Inclusion :</u>&nbsp;Driver Allowance</p>
-                                                <p class="mb-0 text-left"><u>Exclusion :</u>&nbsp;Parking charge , Airport Parking Charge,&nbsp;Toll tax , State tax</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-2 pb-3 pt-3 text-center">
-                                <button type="button" class="btn btn-warning">Book Now</button>                                 
-                            </div>                             
-                        </div>
-                        <div class="align-items-center mb-2 ml-1 mr-1 row" style="border: 1px solid #F8BC20; border-radius: 5px;"> 
-                            <div class="col-8 col-lg-4 me-auto pb-3 pt-3">
-                                <div class="row">
-                                    <div class="col-12 col-md-3">
-                                        <img src="images/Crysta.jpg" style="min-width: 150px;"/> 
-                                    </div>
-                                    <div class="col-12 col-md-9 text-right">
-                                        <span class="h4 text-nowrap">Innova or equivalent</span>
-                                        <div class="h5 text-nowrap">(Prime SUV)</div>
-                                    </div>
-                                </div>
-                            </div>                             
-                            <div class="col-4 col-lg-3 pb-3 pt-3 text-center">
-                                <div>
-                                    <span class="h4">Includes 80 KM</span>
-                                </div>
-                                <div>
-                                    <span class="h5">And 8 Hours</span>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-3 pb-3 pt-3 text-center"> 
-                                <div>
-                                    <span class="h4">2500</span>
-                                    <span class="h4">₹</span>
-                                </div>
-                                <div>
-                                    <span class="h5"><u data-toggle="modal" data-target="#modal2">Fare Summery</u></span>
-                                </div>
-                                <div class="modal pg-show-modal fade" id="modal2">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Fare Summery</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p class="mt-0 text-left"><u>Extra KM :</u>&nbsp;14 ₹ Per KM</p>
-                                                <p class="text-left">Extra Hour : 150 ₹ Per Hour</p>
-                                                <p class="text-left"><u>Inclusion :</u>&nbsp;Driver Allowance</p>
-                                                <p class="mb-0 text-left"><u>Exclusion :</u>&nbsp;Parking charge , Airport Parking Charge, Toll tax , State tax</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-2 pb-3 pt-3 text-center">
-                                <button type="button" class="btn btn-warning">Book Now</button>                                 
-                            </div>                             
-                        </div>
+                    <?php } ?>
                     </div>
                     <div class="fade pt-0 tab-pane" id="pills-12" role="tabpanel" aria-labelledby="pills-12-tab">
+                    <?php 
+                        for($i=0;$i<count($carArray);$i++){
+                            $twelve_hrs= $carArray[$i]['twelve_hrs'];
+                            $rate= $carArray[$i]['rate'];
+                    ?>
                         <div class="align-items-center mb-2 ml-1 mr-1 row" style="border: 1px solid #F8BC20; border-radius: 5px;"> 
                             <div class="col-8 col-lg-4 me-auto pb-3 pt-3">
                                 <div class="row">
                                     <div class="col-12 col-md-3">
-                                        <img src="images/Etios.jpg" style="min-width: 150px;"/> 
+                                        <img src="<?php echo $carArray[$i]['product_image']; ?>" style="min-width: 150px;"/> 
                                     </div>
                                     <div class="col-12 col-md-9 text-right">
-                                        <span class="h4">Etios or equivalent</span>
-                                        <div class="h5">(Sedan)</div>
+                                        <span class="h4"><?php echo $carArray[$i]['car']; ?> or equivalent</span>
+                                        <div class="h5">(<?php echo $carArray[$i]['car_type']; ?>)</div>
                                     </div>
                                 </div>
                             </div>                             
@@ -286,13 +234,13 @@
                             </div>
                             <div class="col-6 col-lg-3 pb-3 pt-3 text-center"> 
                                 <div>
-                                    <span class="h4">2200</span>
+                                    <span class="h4"><?php echo $twelve_hrs; ?></span>
                                     <span class="h4">₹</span>
                                 </div>
                                 <div>
-                                    <span class="h5"><u data-toggle="modal" data-target="#modal2">Fare Summery</u></span>
+                                    <span class="h5"><u data-toggle="modal" data-target="#modal12_<?php echo $i; ?>">Fare Summery</u></span>
                                 </div>
-                                <div class="modal pg-show-modal fade" id="modal2">
+                                <div class="modal pg-show-modal fade" id="modal12_<?php echo $i; ?>">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -302,7 +250,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <p class="mt-0 text-left"><u>Extra KM :</u>&nbsp;10 ₹ Per KM</p>
+                                                <p class="mt-0 text-left"><u>Extra KM :</u>&nbsp;<?php echo $rate; ?> ₹ Per KM</p>
                                                 <p class="text-left"><u>Extra Hour :</u> 150&nbsp;₹ Per Hour</p>
                                                 <p class="text-left"><u>Inclusion :</u>&nbsp;Driver Allowance</p>
                                                 <p class="mb-0 text-left"><u>Exclusion :</u>&nbsp;Parking charge , Airport Parking Charge,&nbsp;Toll tax , State tax</p>
@@ -312,111 +260,10 @@
                                 </div>
                             </div>
                             <div class="col-6 col-lg-2 pb-3 pt-3 text-center">
-                                <button type="button" class="btn btn-warning">Book Now</button>                                 
+                            <button type="button" class="btn btn-warning" onclick="setCarvalue('<?php echo $carArray[$i]['car']; ?>','<?php echo $carArray[$i]['car_type']; ?>','<?php echo $carArray[$i]['id']; ?>','12_Hrs_120_KM','<?php echo $twelve_hrs; ?>')">Book Now</button>                                 
                             </div>                             
                         </div>
-                        <div class="align-items-center mb-2 ml-1 mr-1 row" style="border: 1px solid #F8BC20; border-radius: 5px;"> 
-                            <div class="col-8 col-lg-4 me-auto pb-3 pt-3">
-                                <div class="row">
-                                    <div class="col-12 col-md-3">
-                                        <img src="images/Ertiga.jpg" style="min-width: 150px;"/> 
-                                    </div>
-                                    <div class="col-12 col-md-9 text-right">
-                                        <span class="h4 text-nowrap">Ertiga or equivalent</span>
-                                        <div class="h5 text-nowrap">(SUV)</div>
-                                    </div>
-                                </div>
-                            </div>                             
-                            <div class="col-4 col-lg-3 pb-3 pt-3 text-center">
-                                <div>
-                                    <span class="h4">Includes 120 KM</span>
-                                </div>
-                                <div>
-                                    <span class="h5">And 12 Hours</span>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-3 pb-3 pt-3 text-center"> 
-                                <div>
-                                    <span class="h4">2700</span>
-                                    <span class="h4">₹</span>
-                                </div>
-                                <div>
-                                    <span class="h5"><u data-toggle="modal" data-target="#modal2">Fare Summery</u></span>
-                                </div>
-                                <div class="modal pg-show-modal fade" id="modal2">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Fare Summery</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p class="mt-0 text-left"><u>Extra KM :</u>&nbsp;12 ₹ Per KM</p>
-                                                <p class="text-left">Extra Hour : 150 ₹ Per Hour</p>
-                                                <p class="text-left"><u>Inclusion :</u>&nbsp;Driver Allowance</p>
-                                                <p class="mb-0 text-left"><u>Exclusion :</u>&nbsp;Parking charge , Airport Parking Charge,&nbsp;Toll tax , State tax</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-2 pb-3 pt-3 text-center">
-                                <button type="button" class="btn btn-warning">Book Now</button>                                 
-                            </div>                             
-                        </div>
-                        <div class="align-items-center mb-2 ml-1 mr-1 row" style="border: 1px solid #F8BC20; border-radius: 5px;"> 
-                            <div class="col-8 col-lg-4 me-auto pb-3 pt-3">
-                                <div class="row">
-                                    <div class="col-12 col-md-3">
-                                        <img src="images/Crysta.jpg" style="min-width: 150px;"/> 
-                                    </div>
-                                    <div class="col-12 col-md-9 text-right">
-                                        <span class="h4 text-nowrap">Ennova or equivalent</span>
-                                        <div class="h5 text-nowrap">(Prime SUV)</div>
-                                    </div>
-                                </div>
-                            </div>                             
-                            <div class="col-4 col-lg-3 pb-3 pt-3 text-center">
-                                <div>
-                                    <span class="h4">Includes 120 KM</span>
-                                </div>
-                                <div>
-                                    <span class="h5">And 12 Hours</span>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-3 pb-3 pt-3 text-center"> 
-                                <div>
-                                    <span class="h4">3000</span>
-                                    <span class="h4">₹</span>
-                                </div>
-                                <div>
-                                    <span class="h5"><u data-toggle="modal" data-target="#modal2">Fare Summery</u></span>
-                                </div>
-                                <div class="modal pg-show-modal fade" id="modal2">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Fare Summery</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p class="mt-0 text-left"><u>Extra KM :</u>&nbsp;14 ₹ Per KM</p>
-                                                <p class="text-left">Extra Hour : 150 ₹ Per Hour</p>
-                                                <p class="text-left"><u>Inclusion :</u>&nbsp;Driver Allowance</p>
-                                                <p class="mb-0 text-left"><u>Exclusion :</u>&nbsp;Parking charge , Airport Parking Charge, Toll tax , State tax</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-2 pb-3 pt-3 text-center">
-                                <button type="button" class="btn btn-warning">Book Now</button>                                 
-                            </div>                             
-                        </div>
+                    <?php } ?>
                     </div>
                 </div>
             </div>             
@@ -510,18 +357,19 @@
     <script src="components/pg.blocks/js/bskit-scripts.js"></script>     
     <script src="https://maps.google.com/maps/api/js?sensor=true"></script>     
     <script>
+        function setCarvalue(car_name, car_type, car_id, distance, total){
+
+            $("#car").val(car_name);
+            $("#car_type").val(car_type);
+            $("#car_id").val(car_id);
+            $("#distance").val(distance);
+            $("#total_fare").val(total);
+
+            $('form#selectcar_form').submit();
+        }
         $(document).ready(function(){
-            $("input[name='triptype']").click(function() {
-       
-                var triptype = $(this).val();
-                if(triptype=="roundtrip"){
-                    $("#return_date").parent("div").show();
-                    $("#pickup_time").parent("div").attr("class","col-md-3");
-                }else{
-                    $("#return_date").parent("div").hide();
-                    $("#pickup_time").parent("div").attr("class","col-md-4");
-                }
-            }); 
+            
+            
         });
-    </script>     
+    </script>       
 </body>

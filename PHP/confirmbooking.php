@@ -111,7 +111,21 @@ if(isset($_REQUEST['select_car'])){
                             <div class="container mb-2"> 
                                 <div class="bg-white mt-2 p-4 p-lg-5 shadow"> 
                                     <h4 class="mb-4">Enter Your Details For Booking</h4> 
-                                    <form class="text-center"> 
+                                    <form class="text-center" > 
+                                    <input type="hidden" id="from_city_id" name="from_city_id" value="<?php echo $from_city_id; ?>" />
+                                    <input type="hidden" id="drop_city_id" name="drop_city_id" value="<?php echo $drop_city_id; ?>" />
+                                    <input type="hidden" id="pickup_city" name="pickup_city" value="<?php echo $pickup_city; ?>" />
+                                    <input type="hidden" id="drop_city" name="drop_city" value="<?php echo $drop_city; ?>" />
+                                    <input type="hidden" id="trip" name="trip" value="<?php echo $trip; ?>" />
+                                    <input type="hidden" id="pickup_date" name="pickup_date" value="<?php echo $pickup_date; ?>" />
+                                    <input type="hidden" id="pickup_time" name="pickup_time" value="<?php echo $pickup_time; ?>" />
+                                    <input type="hidden" id="mobile_number" name="mobile_number" value="<?php echo $mobile_number; ?>" />
+                                    <input type="hidden" id="return_date" name="return_date" value="<?php echo $return_date; ?>" />
+                                    <input type="hidden" id="total_fare" name="total_fare" value="<?php echo $total_fare; ?>" />
+                                    <input type="hidden" id="car" name="car" value="<?php echo $car; ?>" />
+                                    <input type="hidden" id="car_id" name="car_id" value="<?php echo $car_id; ?>" />
+                                    <input type="hidden" id="car_type" name="car_type" value="<?php echo $car_type; ?>" />
+                                    <input type="hidden" id="distance" name="distance" value="<?php echo $distance; ?>" />
                                         <div class="form-group"> 
                                             <input type="text" class="form-control rounded-0" placeholder="Enter Name" id="name" name="name" required> 
                                         </div>                                                                                
@@ -133,16 +147,29 @@ if(isset($_REQUEST['select_car'])){
                             <ul class="list-group list-group-flush">
                                 <li class="h6 list-group-item">
                                     <span>Journey : </span>
-                                    <span><?php echo $pickup_city; ?> &gt; <?php echo $drop_city; ?> (<?php echo ucfirst($trip); ?>)</span>
+                                    <?php if($trip=="Local") {?>
+                                        <span><?php echo $pickup_city; ?></span>
+                                    <?php }else{ ?>
+                                        <span><?php echo $pickup_city; ?> &gt; <?php echo $drop_city; ?> (<?php echo ucfirst($trip); ?>)</span>
+
+                                    <?php } ?>
                                 </li>
                                 <li class="h6 list-group-item">
                                     <span>PickUp Date : </span>
-                                    <span> <?php echo date('jS F Y', strtotime($pickup_date)); ?>  </span>
+                                    <span> <?php echo date('jS F Y', strtotime($pickup_date)); ?> at <?php echo $pickup_time; ?> </span>
                                 </li>
                                 <?php if($trip=="roundtrip") {?>
                                     <li class="h6 list-group-item">
                                         <span>Drop Date : </span>
                                         <span> <?php echo date('jS F Y', strtotime($return_date)); ?>  </span>
+                                    </li>
+                                <?php } ?>
+                                <?php if($trip=="Local") {
+                                    if($distance=="12_Hrs_120_KM") $dis= "12 Hrs 120 KM"; else $dis= "8 Hrs 80 KM";
+                                    ?>
+                                    <li class="h6 list-group-item">
+                                        <span>Trip Type : </span>
+                                        <span> <?php echo $trip; ?> (<?php echo $dis; ?>) </span>
                                     </li>
                                 <?php } ?>
                                 <li class="h6 list-group-item">

@@ -43,6 +43,10 @@ $(function () {
 			$('#return_date').data("DateTimePicker").minDate(pickup_date);
 
 			var startString= moment(pickup_date, "YYYY-MM-DD");
+			if(today==pickup_date){
+				var startString= moment().format('YYYY-MM-DD hh:mm a');
+			}
+			
 			var endString= moment(startString, "YYYY-MM-DD").add('days', 1);
 			var time_slotes= intervals(startString, endString);
 
@@ -51,6 +55,26 @@ $(function () {
 				time_option +='<option value="'+time_slotes[i]+'">'+time_slotes[i]+'</option>';
 			}
 			$("#pickup_time").html('').append(time_option);
+
+		});
+
+		$('#pickup_date_local').on('dp.change', function (e) {  
+			var pickup_date= document.getElementById("pickup_date_local").value;
+			var today = moment().format('DD-MM-YYYY');
+
+			var startString= moment(pickup_date, "YYYY-MM-DD");
+			if(today==pickup_date){
+				var startString= moment().format('YYYY-MM-DD hh:mm a');
+			}
+			
+			var endString= moment(startString, "YYYY-MM-DD").add('days', 1);
+			var time_slotes= intervals(startString, endString);
+
+			var time_option= '<option value="">Select Time</option>';
+			for(var i=0;i<time_slotes.length;i++){
+				time_option +='<option value="'+time_slotes[i]+'">'+time_slotes[i]+'</option>';
+			}
+			$("#pickup_time_local").html('').append(time_option);
 
 		});
 		
@@ -68,12 +92,12 @@ $(function () {
 		var result = [];
 	
 		var current = moment(start);
-		console.log(start);
-		while (current <= end) {
+		// console.log(start);
+		while (current < end) {
 			result.push(current.format('hh:mm A'));
 			current.add(15, 'minutes');
 		}
-		console.log(result);
+		// console.log(result);
 		return result;
 	}
 

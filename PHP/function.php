@@ -34,7 +34,7 @@ function get_city_name($city_id){
 function get_car_list(){
 	global $db;
 
-	$query="SELECT ap.id,ap.name,apc.name as cat_name FROM `aos_products` as ap LEFT JOIN aos_product_categories as apc on ap.aos_product_category_id=apc.id WHERE ap.deleted=0 and apc.deleted=0 ORDER BY ap.name ASC ";
+	$query="SELECT ap.id,ap.name,apc.name as cat_name,eight_hrs_c,twelve_hrs_c, ap.price,ap.product_image FROM `aos_products` as ap LEFT JOIN aos_products_cstm on ap.id=aos_products_cstm.id_c LEFT JOIN aos_product_categories as apc on ap.aos_product_category_id=apc.id WHERE ap.deleted=0 and apc.deleted=0 ORDER BY ap.name ASC ";
 	$result= $db->query($query);
 	$carArray=array();
 	$i=0;
@@ -42,6 +42,10 @@ function get_car_list(){
 		$carArray[$i]['id']= $row['id'];
 		$carArray[$i]['car']= $row['name'];
 		$carArray[$i]['car_type']= $row['cat_name'];
+		$carArray[$i]['eight_hrs']= (int)$row['eight_hrs_c'];
+		$carArray[$i]['twelve_hrs']= (int)$row['twelve_hrs_c'];
+		$carArray[$i]['rate']= (float)$row['price'];
+		$carArray[$i]['product_image']= $row['product_image'];
 		$i++;
 	}
 	return $carArray;

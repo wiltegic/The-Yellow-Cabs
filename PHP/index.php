@@ -20,7 +20,7 @@ $cityArray= get_city_dropdown();
         <meta name="description" content=""> 
         <meta name="author" content=""> 
         <!-- bootstrap css -->         
-        <!-- <link rel="stylesheet" href="css/bootstrap.min.css">  -->
+        <link rel="stylesheet" href="css/bootstrap.min.css"> 
         <!-- style css -->         
         <link rel="stylesheet" href="css/style.css"> 
         <!-- Responsive-->         
@@ -43,7 +43,7 @@ $cityArray= get_city_dropdown();
         <link rel="stylesheet" href="blocks.css"> 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/> 
         <!-- <link rel="stylesheet" href="css/bootstrap-datepicker.css">  -->
-        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+        <!-- <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'> -->
         <link rel='stylesheet' href='https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css'>
         <style type="text/css">.nav-tabs .nav-link.active { color: #fff; background-color: #ffc107; }</style>         
     </head>     
@@ -188,10 +188,10 @@ $cityArray= get_city_dropdown();
                         <h3 class=" mb-0 text-center"><b style="font-family: 'Poppins', sans-serif; white-space: nowrap;" class="h3">BOOK YOUR TAXI NOW</b></h3> 
                         <ul class="nav nav-tabs" role="tablist"> 
                             <li class="nav-item"> 
-                                <a class="active nav-link show" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-expanded="true" aria-selected="true">OUTSTATION</a> 
+                                <a id="os_tab" name="os_tab" class="active nav-link show" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-expanded="true" aria-selected="true">OUTSTATION</a> 
                             </li>                             
                             <li class="nav-item"> 
-                                <a class="nav-link" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-expanded="true" aria-selected="false">LOCAL</a> 
+                                <a id="local_tab" name="local_tab" class="nav-link" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-expanded="true" aria-selected="false">LOCAL</a> 
                             </li>                             
                             <li class="nav-item"> 
 </li>                             
@@ -262,14 +262,17 @@ $cityArray= get_city_dropdown();
                                 <div class="row"> 
                                     <div class="col-md-4" style="padding-top: 15px;"> 
                                         <label class="date">PICK UP TIME</label>                                         
-                                        <input class="form-control" type="text" id="pickup_time_local" name="pickup_time__local" placeholder="Set PickUp Time" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
+                                        <!-- <input class="form-control" type="text" id="pickup_time_local" name="pickup_time__local" placeholder="Set PickUp Time" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;">  -->
+                                        <select class="form-control" id="pickup_time_local" name="pickup_time_local" placeholder="Set PickUp Time" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;">
+                                                
+                                        </select>
                                     </div>                                     
                                     <div class="col-md-4" style="padding-top: 15px;"> 
                                         <label class="date">MOBILE NUMBER</label>                                         
                                         <input class="form-control" placeholder="Enter Your Number" type="tel" id="mobile_number_local" name="mobile_number_local" style="background-color:#EEEEEE; border-radius: 25px; height: 42px; font-size: medium;"> 
                                     </div>                                     
                                     <div class="col-md-4" style="padding-top: 15px;"> 
-                                        <button class="book_btn">SELECT CAR</button>                                         
+                                        <button class="book_btn" type="submit" id="select_car" name="select_car">SELECT CAR</button>                                         
                                     </div>                                     
                                 </div>                                 
                             </div>    
@@ -741,11 +744,51 @@ $cityArray= get_city_dropdown();
                 if(triptype=="roundtrip"){
                     $("#return_date").parent("div").show();
                     $("#mobile_number").parent("div").attr("class","col-md-3");
-                    $("return_date").prop('required',true);
+                    $("#return_date").prop('required',true);
                 }else{
                     $("#return_date").parent("div").hide();
                     $("#mobile_number").parent("div").attr("class","col-md-4");
-                    $("return_date").prop('required',false);
+                    $("#return_date").prop('required',false);
+                }
+            }); 
+            $("#os_tab,#local_tab").click(function() {
+                
+                var tab = $(this).attr('id');
+                if(tab=="local_tab"){
+                    $("#pickup_city_local").prop('required',true);
+                    $("#pickup_date_local").prop('required',true);
+                    $("#pickup_time_local").prop('required',true);
+                    $("#mobile_number_local").prop('required',true);
+
+                    $("#pickup_city").prop('required',false);
+                    $("#drop_city").prop('required',false);
+                    $("#pickup_date").prop('required',false);
+                    $("#pickup_time").prop('required',false);
+                    $("#return_date").prop('required',false);
+                    $("#mobile_number").prop('required',false);
+
+                    $('form').attr('action', 'selectcar-local.php');
+                    $("#booking_type").val("Local");
+                }else{
+                    
+                    $("#pickup_city").prop('required',true);
+                    $("#drop_city").prop('required',true);
+                    $("#pickup_date").prop('required',true);
+                    $("#pickup_time").prop('required',true);
+                    $("#mobile_number").prop('required',true);
+                    var triptype = $(this).val();
+                    if(triptype=="roundtrip"){
+
+                        $("#return_date").prop('required',true);
+                    }
+
+                    $("#pickup_city_local").prop('required',false);
+                    $("#pickup_date_local").prop('required',false);
+                    $("#pickup_time_local").prop('required',false);
+                    $("#mobile_number_local").prop('required',false);
+
+                    $('form').attr('action', 'selectcar.php');
+                    $("#booking_type").val("Outstation");
                 }
             }); 
         });
