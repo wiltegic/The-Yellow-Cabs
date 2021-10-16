@@ -1,6 +1,6 @@
 $(function () {
 
-		var startString= moment().format('YYYY-MM-DD hh:mm a');
+		var startString= moment().add('minutes',90).format('YYYY-MM-DD hh:mm a');
 		var endString= moment(startString, "YYYY-MM-DD").add('days', 1);
 		var time_slotes= intervals(startString, endString);
 		var time_option= '<option value="">Select Time</option>';
@@ -12,17 +12,19 @@ $(function () {
 
 		$('#pickup_date').datetimepicker({
 			format: 'DD-MM-YYYY',
-			minDate: new Date().setHours(0,0,0,0)
+			minDate:moment().add('minutes',90)
+			// minDate: new Date().setHours(0,0,0,0)
 		});
 
 		$('#pickup_date_local').datetimepicker({
 			format: 'DD-MM-YYYY',
-			minDate: new Date().setHours(0,0,0,0)
+			minDate:moment().add('minutes',90)
+			// minDate: new Date().setHours(0,0,0,0)
 		});
 
 		$('#return_date').datetimepicker({
 			format: 'DD-MM-YYYY',
-			minDate: 0	
+			minDate: moment().add('days', 1)
 		});
 
 		// $('#pickup_time').datetimepicker({
@@ -44,7 +46,7 @@ $(function () {
 
 			var startString= moment(pickup_date, "YYYY-MM-DD");
 			if(today==pickup_date){
-				var startString= moment().format('YYYY-MM-DD hh:mm a');
+				var startString= moment().add('minutes',90).format('YYYY-MM-DD hh:mm a');
 			}
 			
 			var endString= moment(startString, "YYYY-MM-DD").add('days', 1);
@@ -64,7 +66,7 @@ $(function () {
 
 			var startString= moment(pickup_date, "YYYY-MM-DD");
 			if(today==pickup_date){
-				var startString= moment().format('YYYY-MM-DD hh:mm a');
+				var startString= moment().add('minutes',90).format('YYYY-MM-DD hh:mm a');
 			}
 			
 			var endString= moment(startString, "YYYY-MM-DD").add('days', 1);
