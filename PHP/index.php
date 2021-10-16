@@ -41,10 +41,10 @@ $cityArray= get_city_dropdown();
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700"> 
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"> 
         <link rel="stylesheet" href="blocks.css"> 
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/> 
+        <link rel="stylesheet" href="css/select2.min.css"/> 
         <!-- <link rel="stylesheet" href="css/bootstrap-datepicker.css">  -->
         <!-- <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'> -->
-        <link rel='stylesheet' href='https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css'>
+        <link rel='stylesheet' href="css/bootstrap-datetimepicker.css">
         <style type="text/css">.nav-tabs .nav-link.active { color: #fff; background-color: #ffc107; }</style>         
     </head>     
     <!-- body -->     
@@ -211,12 +211,12 @@ $cityArray= get_city_dropdown();
                                     </div>                                 
                                     <div class=" row"> 
                                         <div class="col-md-4" style="padding-top: 15px;"> 
-                                            <label class="date">FROM</label>                                         
-                                            <select class="book_n" name="pickup_city" id="pickup_city" required></select>                                         
+                                            <label class="date">FROM</label>                                    
+                                            <select class="book_n" name="pickup_city" id="pickup_city" style="width: 100%;" required></select>                                                
                                         </div>                                     
                                         <div class="col-md-4" style="padding-top: 15px;"> 
                                             <label class="date">TO</label>                                         
-                                            <select class="book_n" name="drop_city" id="drop_city" required></select>                                         
+                                            <select class="book_n" name="drop_city" id="drop_city" style="width: 100%;" required></select>                                         
                                         </div>                                     
                                         <div class="col-md-3" style="padding-top: 15px;"> 
                                             <label class="date">PICK UP DATE</label>                                         
@@ -250,9 +250,10 @@ $cityArray= get_city_dropdown();
                             <div class="pt-1 tab-pane" role="tabpanel" aria-labelledby="tab2-tab" id="tab2"> 
                                 <div class="row"> 
                                     <div style="padding-top: 15px;" class="col-md-8"> 
-                                        <label class="date">city</label>                                         
+                                        <label class="date">city</label>  
+                                        <br/>                                       
                                         <!-- <input class="book_n" type="text" placeholder="Enter PickUp City" name="pickup_city_local">  -->
-                                        <select class="book_n" name="pickup_city_local" id="pickup_city_local"></select>
+                                        <select class="book_n" name="pickup_city_local" id="pickup_city_local" style="width: 100%;"></select>
                                     </div>                                     
                                     <div class="col-md-3" style="padding-top: 15px;"> 
                                         <label class="date">PICK UP DATE</label>                                         
@@ -795,8 +796,8 @@ $cityArray= get_city_dropdown();
             $("#local_car_rentals").click(function(){
                 $("#local_tab").trigger("click");
                 $('html, body').animate({
-                     scrollTop: $("#local_tab").offset().top - 2
-                 },200);
+                     scrollTop: $("#local_tab").offset()
+                 },20);
             });
 
         });
