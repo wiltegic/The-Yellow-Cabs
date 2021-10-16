@@ -795,8 +795,8 @@ $cityArray= get_city_dropdown();
             $("#local_car_rentals").click(function(){
                 $("#local_tab").trigger("click");
                 $('html, body').animate({
-                     scrollTop: $("#local_tab").offset()
-                 },2000);
+                     scrollTop: $("#local_tab").offset().top - 2
+                 },200);
             });
 
         });

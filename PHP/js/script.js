@@ -108,6 +108,6 @@ $(function () {
 		$("#drop_city").select2().val(to_id).trigger("change");
 		$('html, body').animate({
 			scrollTop: $("#os_tab").offset().top - 2
-		},2000);
+		},200);
 	}
 
