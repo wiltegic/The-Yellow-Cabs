@@ -1,3 +1,14 @@
+<?php
+include ("function.php");
+
+if(isset($_REQUEST['submit'])){
+    // echo"<pre>";print_r($_REQUEST);exit;
+    $response= addBookingToCRM($_REQUEST, "/index.php?entryPoint=sendInquirey");
+    
+
+}
+
+?>
 <!DOCTYPE html> 
 <html lang="en"> 
     <head> 
@@ -75,7 +86,7 @@
                     <div class="col-lg-8 ml-auto mr-auto py-3"> 
                         <h2 class="font-weight-bold text-uppercase">Inquirey</h2> 
                         <p class="mb-5 text-secondary">Enter Your Details Below</p> 
-                        <form> 
+                        <form id="inquirey_form" name="inquirey_form" action="inquirey.php"> 
                             <div class="form-group"> 
                                 <input type="text" class="border border-1 form-control rounded-1" placeholder="Full Name" id="name" name="name"> 
                             </div>                             

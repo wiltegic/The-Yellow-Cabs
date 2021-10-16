@@ -31,6 +31,18 @@ function get_city_name($city_id){
     return $city;
 }
 
+function get_city_id($city_name){
+	global $db;
+
+	$query="SELECT * FROM `bw_city` WHERE deleted=0 and name LIKE '".$city_name."'";
+	$result= $db->query($query);
+	$row= $result->fetch_assoc();
+
+	$city= $row['id'];
+    
+    return $city;
+}
+
 function get_car_list(){
 	global $db;
 
@@ -80,6 +92,32 @@ function get_city_distance($from_city,$to_city,$car_id){
 
 	return $response;
 	
+}
+
+function addBookingToCRM($data, $entryPoint){
+	global $db,$CRM_URL;
+
+	$curl = curl_init();
+    // echo"<pre>";print_r($data);exit;
+    curl_setopt_array($curl, array(
+        CURLOPT_URL =>$CRM_URL.$entryPoint,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_CUSTOMREQUEST => 'POST',
+		CURLOPT_POSTFIELDS => $data,
+        CURLOPT_HTTPHEADER => array(),
+	));
+	
+	$response = curl_exec($curl);
+
+	curl_close($curl);
+
+	
+	return json_decode($response,true);
 }
 
 ?>

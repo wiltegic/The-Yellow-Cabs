@@ -106,15 +106,16 @@ if(isset($_REQUEST['select_car'])){
         <input type="hidden" id="select_car" name="select_car" value="" />
         <input type="hidden" id="from_city_id" name="from_city_id" value="<?php echo $from_city_id; ?>" />
         <input type="hidden" id="pickup_city" name="pickup_city" value="<?php echo $pickup_city; ?>" />
-        <input type="hidden" id="trip" name="trip" value="<?php echo $booking_type; ?>" />
         <input type="hidden" id="pickup_date" name="pickup_date" value="<?php echo $pickup_date; ?>" />
         <input type="hidden" id="pickup_time" name="pickup_time" value="<?php echo $pickup_time; ?>" />
         <input type="hidden" id="mobile_number" name="mobile_number" value="<?php echo $mobile_number; ?>" />
+        <input type="hidden" id="booking_type" name="booking_type" value="<?php echo $booking_type; ?>"  />
         <input type="hidden" id="total_fare" name="total_fare" value="" />
         <input type="hidden" id="car" name="car" value="" />
         <input type="hidden" id="car_id" name="car_id" value="" />
         <input type="hidden" id="car_type" name="car_type" value="" />
         <input type="hidden" id="distance" name="distance" value="" />
+        <input type="hidden" id="trip" name="trip" value="" />
         
     </form>
     <div class="our"> 
@@ -201,7 +202,7 @@ if(isset($_REQUEST['select_car'])){
                                 </div>
                             </div>
                             <div class="col-6 col-lg-2 pb-3 pt-3 text-center">
-                                <button type="button" class="btn btn-warning" onclick="setCarvalue('<?php echo $carArray[$i]['car']; ?>','<?php echo $carArray[$i]['car_type']; ?>','<?php echo $carArray[$i]['id']; ?>','8_Hrs_80_KM','<?php echo $eight_hrs; ?>')">Book Now</button>                                 
+                                <button type="button" class="btn btn-warning" onclick="setCarvalue('<?php echo $carArray[$i]['car']; ?>','<?php echo $carArray[$i]['car_type']; ?>','<?php echo $carArray[$i]['id']; ?>','8_Hrs_80_KM','<?php echo $eight_hrs; ?>','80')">Book Now</button>                                 
                             </div>                             
                         </div>
                     <?php } ?>
@@ -260,7 +261,7 @@ if(isset($_REQUEST['select_car'])){
                                 </div>
                             </div>
                             <div class="col-6 col-lg-2 pb-3 pt-3 text-center">
-                            <button type="button" class="btn btn-warning" onclick="setCarvalue('<?php echo $carArray[$i]['car']; ?>','<?php echo $carArray[$i]['car_type']; ?>','<?php echo $carArray[$i]['id']; ?>','12_Hrs_120_KM','<?php echo $twelve_hrs; ?>')">Book Now</button>                                 
+                            <button type="button" class="btn btn-warning" onclick="setCarvalue('<?php echo $carArray[$i]['car']; ?>','<?php echo $carArray[$i]['car_type']; ?>','<?php echo $carArray[$i]['id']; ?>','12_Hrs_120_KM','<?php echo $twelve_hrs; ?>','120')">Book Now</button>                                 
                             </div>                             
                         </div>
                     <?php } ?>
@@ -357,13 +358,14 @@ if(isset($_REQUEST['select_car'])){
     <script src="components/pg.blocks/js/bskit-scripts.js"></script>     
     <script src="https://maps.google.com/maps/api/js?sensor=true"></script>     
     <script>
-        function setCarvalue(car_name, car_type, car_id, distance, total){
+        function setCarvalue(car_name, car_type, car_id, trip, total,distance){
 
             $("#car").val(car_name);
             $("#car_type").val(car_type);
             $("#car_id").val(car_id);
             $("#distance").val(distance);
             $("#total_fare").val(total);
+            $("#trip").val(trip);
 
             $('form#selectcar_form').submit();
         }

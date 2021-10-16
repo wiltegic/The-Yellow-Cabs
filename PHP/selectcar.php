@@ -113,6 +113,7 @@ if(isset($_REQUEST['select_car'])){
         <input type="hidden" id="pickup_time" name="pickup_time" value="<?php echo $pickup_time; ?>" />
         <input type="hidden" id="mobile_number" name="mobile_number" value="<?php echo $mobile_number; ?>" />
         <input type="hidden" id="return_date" name="return_date" value="<?php echo $return_date; ?>" />
+        <input type="hidden" id="booking_type" name="booking_type" value="<?php echo $booking_type; ?>"  />
         <input type="hidden" id="total_fare" name="total_fare" value="" />
         <input type="hidden" id="car" name="car" value="" />
         <input type="hidden" id="car_id" name="car_id" value="" />

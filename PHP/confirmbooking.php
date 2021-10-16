@@ -1,6 +1,19 @@
 <?php
 include ("function.php");
 
+if(isset($_REQUEST['confirm_booking'])){
+    // echo"<pre>";print_r($_REQUEST);exit;
+    global $site_url;
+
+    $response= addBookingToCRM($_REQUEST, "/index.php?entryPoint=addBooking");
+    if($response['status']=="success"){
+        
+        $booking_id= $response['booking_id'];
+        $booking_no= $response['booking_no'];
+        header('Location: '.$site_url.'/bookingdone.php?booking=1&booking_no='.$booking_no.'&booking_id='.$booking_id, true, 307);
+    }
+}
+
 if(isset($_REQUEST['select_car'])){
     // echo"<pre>";print_r($_REQUEST);exit;
 
@@ -111,7 +124,7 @@ if(isset($_REQUEST['select_car'])){
                             <div class="container mb-2"> 
                                 <div class="bg-white mt-2 p-4 p-lg-5 shadow"> 
                                     <h4 class="mb-4">Enter Your Details For Booking</h4> 
-                                    <form class="text-center" > 
+                                    <form class="text-center" id="confirm_booking_form" name="confirm_booking_form"> 
                                     <input type="hidden" id="from_city_id" name="from_city_id" value="<?php echo $from_city_id; ?>" />
                                     <input type="hidden" id="drop_city_id" name="drop_city_id" value="<?php echo $drop_city_id; ?>" />
                                     <input type="hidden" id="pickup_city" name="pickup_city" value="<?php echo $pickup_city; ?>" />
@@ -126,6 +139,7 @@ if(isset($_REQUEST['select_car'])){
                                     <input type="hidden" id="car_id" name="car_id" value="<?php echo $car_id; ?>" />
                                     <input type="hidden" id="car_type" name="car_type" value="<?php echo $car_type; ?>" />
                                     <input type="hidden" id="distance" name="distance" value="<?php echo $distance; ?>" />
+                                    <input type="hidden" id="booking_type" name="booking_type" value="<?php echo $booking_type; ?>"  />
                                         <div class="form-group"> 
                                             <input type="text" class="form-control rounded-0" placeholder="Enter Name" id="name" name="name" required> 
                                         </div>                                                                                
@@ -135,7 +149,7 @@ if(isset($_REQUEST['select_car'])){
                                         <div class="form-group"> 
                                             <textarea class="border-1 form-control rounded-1" rows="6" placeholder="Enter PickUp Address" id="pickup_address" name="pickup_address" required></textarea> 
                                         </div>                                         
-                                        <button type="submit" class="bg-warning btn btn-warning rounded-5 text-uppercase">Confirm BOOKING</button>                                         
+                                        <button type="submit" id="confirm_booking" name="confirm_booking" class="bg-warning btn btn-warning rounded-5 text-uppercase">Confirm BOOKING</button>                                         
                                     </form>                                     
                                 </div>                                 
                             </div>                             
@@ -147,7 +161,7 @@ if(isset($_REQUEST['select_car'])){
                             <ul class="list-group list-group-flush">
                                 <li class="h6 list-group-item">
                                     <span>Journey : </span>
-                                    <?php if($trip=="Local") {?>
+                                    <?php if($booking_type=="Local") {?>
                                         <span><?php echo $pickup_city; ?></span>
                                     <?php }else{ ?>
                                         <span><?php echo $pickup_city; ?> &gt; <?php echo $drop_city; ?> (<?php echo ucfirst($trip); ?>)</span>
@@ -164,12 +178,12 @@ if(isset($_REQUEST['select_car'])){
                                         <span> <?php echo date('jS F Y', strtotime($return_date)); ?>  </span>
                                     </li>
                                 <?php } ?>
-                                <?php if($trip=="Local") {
-                                    if($distance=="12_Hrs_120_KM") $dis= "12 Hrs 120 KM"; else $dis= "8 Hrs 80 KM";
+                                <?php if($booking_type=="Local") {
+                                    if($trip=="12_Hrs_120_KM") $dis= "12 Hrs 120 KM"; else $dis= "8 Hrs 80 KM";
                                     ?>
                                     <li class="h6 list-group-item">
                                         <span>Trip Type : </span>
-                                        <span> <?php echo $trip; ?> (<?php echo $dis; ?>) </span>
+                                        <span> <?php echo $booking_type; ?> (<?php echo $dis; ?>) </span>
                                     </li>
                                 <?php } ?>
                                 <li class="h6 list-group-item">

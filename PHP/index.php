@@ -476,7 +476,7 @@ $cityArray= get_city_dropdown();
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">AHMEDABAD</h4> 
                         <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO VADODARA</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Ahmedabad'); ?>','<?php echo get_city_id('Vadodara'); ?>')">● AHMEDABAD TO VADODARA</a></li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO SURAT</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO UDAIPUR</li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO MUMBAI</li>                             
@@ -635,7 +635,7 @@ $cityArray= get_city_dropdown();
                         <h4 class="text-white">SERVICES&nbsp;</h4> 
                         <ul> 
                             <li style="border:rgba(0, 0, 0, 0.19);"> 
-                                <a href="index.php" class="text-white">● Local Car Rentals</a> 
+                                <a href="javascript:void(1)" id="local_car_rentals" name="local_car_rentals" class="text-white">● Local Car Rentals</a> 
                             </li>                             
                             <li style="border:rgba(0, 0, 0, 0.19);"> 
                                 <a href="index.php" class="text-white">● Outstation Taxi</a> 
@@ -791,6 +791,14 @@ $cityArray= get_city_dropdown();
                     $("#booking_type").val("Outstation");
                 }
             }); 
+
+            $("#local_car_rentals").click(function(){
+                $("#local_tab").trigger("click");
+                $('html, body').animate({
+                     scrollTop: $("#local_tab").offset()
+                 },2000);
+            });
+
         });
     </script>     
 </body>

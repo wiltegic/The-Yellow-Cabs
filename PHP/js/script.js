@@ -101,3 +101,11 @@ $(function () {
 		return result;
 	}
 
+	function setFromTocity(from_id, to_id){
+		$("#pickup_city").select2().val(from_id).trigger("change");
+		$("#drop_city").select2().val(to_id).trigger("change");
+		$('html, body').animate({
+			scrollTop: $("#os_tab").offset().top - 2
+		},2000);
+	}
+

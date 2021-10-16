@@ -1,3 +1,15 @@
+<?php
+include ("function.php");
+global $site_url;
+if($_REQUEST['booking']=="1"){
+    // echo"<pre>";print_r($_REQUEST);exit;
+    $booking_no= $_REQUEST['booking_no'];
+    $booking_id= $_REQUEST['booking_id'];
+}else{
+    // header('Location: '.$site_url.'/index.php');
+}
+
+?>
 <!DOCTYPE html> 
 <html lang="en" class=""> 
     <head> 
@@ -92,6 +104,7 @@
                     <img src="images/done.gif" width="100px;"/>
                     <div class="card-body">
                         <h5 class="card-title h4">Your Cab Booking is Done</h5>
+                        <p class="card-text h5">Booking reference no :- <?php echo $booking_no; ?></p>
                         <p class="card-text h5">Our Executive Will Contact You As Soon As Possible.</p>
                         <p class="card-text"><small class="h6">Have a Safe Journey !</small></p>
                     </div>
