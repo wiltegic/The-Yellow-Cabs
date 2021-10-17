@@ -3,6 +3,7 @@ include ("function.php");
 
 $cityArray= get_city_dropdown();
 
+$city_id= get_city_id('Mumbai');
 
 ?> 
 <!DOCTYPE html> 
@@ -427,6 +428,7 @@ $cityArray= get_city_dropdown();
         // });
         $(document).ready(function(){
             var city = <?php echo json_encode($cityArray); ?>;
+            var city_id = '<?php echo $city_id; ?>';
 
             var option= '<option value="">Enter PickUp City</option>';
             for(var i=0;i<city.length;i++){
@@ -520,6 +522,7 @@ $cityArray= get_city_dropdown();
                  },20);
             });
 
+            $("#pickup_city,#pickup_city_local").select2().val(city_id).trigger("change");
         });
     </script>     
 </body>

@@ -478,120 +478,120 @@ $cityArray= get_city_dropdown();
                         <h4 class="text-body text-left">AHMEDABAD</h4> 
                         <ul> 
                             <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Ahmedabad'); ?>','<?php echo get_city_id('Vadodara'); ?>')">● AHMEDABAD TO VADODARA</a></li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO SURAT</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO UDAIPUR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO MUMBAI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO INDORE</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Ahmedabad'); ?>','<?php echo get_city_id('Surat'); ?>')">● AHMEDABAD TO SURAT</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Ahmedabad'); ?>','<?php echo get_city_id('Udaipur'); ?>')">● AHMEDABAD TO UDAIPUR</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Ahmedabad'); ?>','<?php echo get_city_id('Mumbai'); ?>')">● AHMEDABAD TO MUMBAI</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Ahmedabad'); ?>','<?php echo get_city_id('Indore'); ?>')">● AHMEDABAD TO INDORE</a></li>                             
                         </ul>                         
                     </div>                     
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">SURAT</h4> 
                         <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● SURAT TO MUMBAI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● SURAT TO AHMEDABAD</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● SURAT TO PUNE</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● SURAT TO VADODARA</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● SURAT TO INDORE</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Surat'); ?>','<?php echo get_city_id('Mumbai'); ?>')">● SURAT TO MUMBAI</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Surat'); ?>','<?php echo get_city_id('Ahmedabad'); ?>')">● SURAT TO AHMEDABAD</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Surat'); ?>','<?php echo get_city_id('Pune'); ?>')">● SURAT TO PUNE</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Surat'); ?>','<?php echo get_city_id('Vadodara'); ?>')">● SURAT TO VADODARA</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Surat'); ?>','<?php echo get_city_id('Indore'); ?>')">● SURAT TO INDORE</a></li>                             
                         </ul>                         
                     </div>                     
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">VADODARA</h4> 
                         <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● VADODARA TO AHMEDABAD</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● VADODARA TO SURAT</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● VADODARA TO MUMBAI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● VADODARA TO UDAIPUR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● VADODARA TO INDORE</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Vadodara'); ?>','<?php echo get_city_id('Ahmedabad'); ?>')">● VADODARA TO AHMEDABAD</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Vadodara'); ?>','<?php echo get_city_id('Surat'); ?>')">● VADODARA TO SURAT</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Vadodara'); ?>','<?php echo get_city_id('Mumbai'); ?>')">● VADODARA TO MUMBAI</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Vadodara'); ?>','<?php echo get_city_id('Udaipur'); ?>')">● VADODARA TO UDAIPUR</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Vadodara'); ?>','<?php echo get_city_id('Indore'); ?>')">● VADODARA TO INDORE</a></li>                             
                         </ul>                         
                     </div>                     
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">RAJKOT</h4> 
                         <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● RAJKOT TO AHMEDABAD</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● RAJKOT TO GANDHIDHAM</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● RAJKOT TO SURAT</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● RAJKOT TO BHAVNAGAR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● RAJKOT TO MUMBAI</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Rajkot'); ?>','<?php echo get_city_id('Ahmedabad'); ?>')">● RAJKOT TO AHMEDABAD</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Rajkot'); ?>','<?php echo get_city_id('Gandhidham'); ?>')">● RAJKOT TO GANDHIDHAM</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Rajkot'); ?>','<?php echo get_city_id('Surat'); ?>')">● RAJKOT TO SURAT</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Rajkot'); ?>','<?php echo get_city_id('Bhavnagar'); ?>')">● RAJKOT TO BHAVNAGAR</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Rajkot'); ?>','<?php echo get_city_id('Mumbai'); ?>')">● RAJKOT TO MUMBAI</a></li>                             
                         </ul>                         
                     </div>                     
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">MUMBAI</h4> 
                         <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● MUMBAI TO PUNE</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● MUMBAI TO LONAVALA</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● MUMBAI TO NASHIK</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● MUMBAI TO SURAT</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● MUMBAI TO AHMEDABAD</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Mumbai'); ?>','<?php echo get_city_id('Pune'); ?>')">● MUMBAI TO PUNE</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Mumbai'); ?>','<?php echo get_city_id('Lonavala'); ?>')">● MUMBAI TO LONAVALA</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Mumbai'); ?>','<?php echo get_city_id('Nashik'); ?>')">● MUMBAI TO NASHIK</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Mumbai'); ?>','<?php echo get_city_id('Surat'); ?>')">● MUMBAI TO SURAT</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Mumbai'); ?>','<?php echo get_city_id('Ahmedabad'); ?>')">● MUMBAI TO AHMEDABAD</a></li>                             
                         </ul>                         
                     </div>                     
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">PUNE</h4> 
                         <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● PUNE TO MUMBAI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● PUNE TO MAHABALESWAR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● PUNE TO NASHIK</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● PUNE TO SURAT</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● PUNE TO AHMEDABAD</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Pune'); ?>','<?php echo get_city_id('Mumbai'); ?>')">● PUNE TO MUMBAI</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Pune'); ?>','<?php echo get_city_id('Mahabaleshwar'); ?>')">● PUNE TO MAHABALESHWAR</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Pune'); ?>','<?php echo get_city_id('Nashik'); ?>')">● PUNE TO NASHIK</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Pune'); ?>','<?php echo get_city_id('Surat'); ?>')">● PUNE TO SURAT</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Pune'); ?>','<?php echo get_city_id('Ahmedabad'); ?>')">● PUNE TO AHMEDABAD</a></li>                             
                         </ul>                         
                     </div>                     
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">UDAIPUR</h4> 
                         <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● UDAIPUR TO JODHPUR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● UDAIPUR TO JAIPUR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● UDAIPUR TO AHMEDABAD</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● UDAIPUR TO VADODARA</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● UDAIPUR TO BHILWARA</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Udaipur'); ?>','<?php echo get_city_id('Jodhpur'); ?>')">● UDAIPUR TO JODHPUR</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Udaipur'); ?>','<?php echo get_city_id('Jaipur'); ?>')">● UDAIPUR TO JAIPUR</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Udaipur'); ?>','<?php echo get_city_id('Ahmedabad'); ?>')">● UDAIPUR TO AHMEDABAD</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Udaipur'); ?>','<?php echo get_city_id('Vadodara'); ?>')">● UDAIPUR TO VADODARA</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Udaipur'); ?>','<?php echo get_city_id('Bhilwara'); ?>')">● UDAIPUR TO BHILWARA</a></li>                             
                         </ul>                         
                     </div>                     
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">JAIPUR</h4> 
                         <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● JAIPUR TO UDAIPUR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● JAIPUR TO JODHPUR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● JAIPUR TO AHMEDABAD</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● JAIPUR TO DELHI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● JAIPUR TO BHILWARA</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Jaipur'); ?>','<?php echo get_city_id('Udaipur'); ?>')">● JAIPUR TO UDAIPUR</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Jaipur'); ?>','<?php echo get_city_id('Jodhpur'); ?>')">● JAIPUR TO JODHPUR</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Jaipur'); ?>','<?php echo get_city_id('Ahmedabad'); ?>')">● JAIPUR TO AHMEDABAD</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Jaipur'); ?>','<?php echo get_city_id('Delhi'); ?>')">● JAIPUR TO DELHI</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Jaipur'); ?>','<?php echo get_city_id('Bhilwara'); ?>')">● JAIPUR TO BHILWARA</a></li>                             
                         </ul>                         
                     </div>                     
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">INDORE</h4> 
                         <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● INDORE TO BHOPAL</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● INDORE TO MUMBAI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● INDORE TO AHMEDABAD</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● INDORE TO VADODARA</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● INDORE TO NAGPUR</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Indore'); ?>','<?php echo get_city_id('Bhopal'); ?>')">● INDORE TO BHOPAL</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Indore'); ?>','<?php echo get_city_id('Mumbai'); ?>')">● INDORE TO MUMBAI</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Indore'); ?>','<?php echo get_city_id('Ahmedabad'); ?>')">● INDORE TO AHMEDABAD</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Indore'); ?>','<?php echo get_city_id('Vadodara'); ?>')">● INDORE TO VADODARA</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Indore'); ?>','<?php echo get_city_id('Nagpur'); ?>')">● INDORE TO NAGPUR</a></li>                             
                         </ul>                         
                     </div>                     
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">BHOPAL</h4> 
                         <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● BHOPAL TO MUMBAI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● BHOPAL TO INDORE</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● BHOPAL TO AHMEDABAD</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● BHOPAL TO UJJAIN</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● BHOPAL TO VADODARA</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Bhopal'); ?>','<?php echo get_city_id('Mumbai'); ?>')">● BHOPAL TO MUMBAI</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Bhopal'); ?>','<?php echo get_city_id('Indore'); ?>')">● BHOPAL TO INDORE</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Bhopal'); ?>','<?php echo get_city_id('Ahmedabad'); ?>')">● BHOPAL TO AHMEDABAD</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Bhopal'); ?>','<?php echo get_city_id('Ujjain'); ?>')">● BHOPAL TO UJJAIN</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Bhopal'); ?>','<?php echo get_city_id('Vadodara'); ?>')">● BHOPAL TO VADODARA</a></li>                             
                         </ul>                         
                     </div>                     
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">GANDHIDHAM</h4> 
                         <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● GANDHIDHAM TO BHUJ</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● GANDHIDHAM TO MUNDRA</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● GANDHIDHAM TO RAJKOT</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● GANDHIDHAM TO AHMEDABAD</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● GANDHIDHAM TO MUMBAI</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Gandhidham'); ?>','<?php echo get_city_id('Bhuj'); ?>')">● GANDHIDHAM TO BHUJ</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Gandhidham'); ?>','<?php echo get_city_id('Mundra'); ?>')">● GANDHIDHAM TO MUNDRA</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Gandhidham'); ?>','<?php echo get_city_id('Rajkot'); ?>')">● GANDHIDHAM TO RAJKOT</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Gandhidham'); ?>','<?php echo get_city_id('Ahmedabad'); ?>')">● GANDHIDHAM TO AHMEDABAD</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Gandhidham'); ?>','<?php echo get_city_id('Mumbai'); ?>')">● GANDHIDHAM TO MUMBAI</a></li>                             
                         </ul>                         
                     </div>                     
                     <div class="col-md-4 col-xl-4"> 
                         <h4 class="text-body text-left">NASHIK</h4> 
                         <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● NASHIK TO MUMBAI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● NASHIK TO PUNE</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● NASHIK TO VAPI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● NASHIK TO SURAT</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● NASHIK TO INDORE</li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Nashik'); ?>','<?php echo get_city_id('Mumbai'); ?>')">● NASHIK TO MUMBAI</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Nashik'); ?>','<?php echo get_city_id('Pune'); ?>')">● NASHIK TO PUNE</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Nashik'); ?>','<?php echo get_city_id('Vapi'); ?>')">● NASHIK TO VAPI</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Nashik'); ?>','<?php echo get_city_id('Surat'); ?>')">● NASHIK TO SURAT</a></li>                             
+                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Nashik'); ?>','<?php echo get_city_id('Indore'); ?>')">● NASHIK TO INDORE</a></li>                             
                         </ul>                         
                     </div>                     
                 </div>                 
