@@ -15,7 +15,7 @@ $cityArray= get_city_dropdown();
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <meta name="viewport" content="initial-scale=1, maximum-scale=1"> 
         <!-- site metas -->         
-        <title>The Yellow Cabs | Outstation and Local Taxi Booking Service. India's Most Trusted and Affordable Cab Booking Service.</title>         
+        <title>Surat Cab Booking</title>         
         <meta name="keywords" content=""> 
         <meta name="description" content=""> 
         <meta name="author" content=""> 
@@ -295,314 +295,33 @@ $cityArray= get_city_dropdown();
             <div class="container pb-4 pt-0"> 
                 <div class="align-items-center  row"> 
                     <div class="col-lg-6 me-auto pb-3 pt-3 text-center"> 
-                        <img src="images/3682361.jpg"/> 
+                        <img src="images/989a38c571050dead57901d986e23818.jpg"/> 
                     </div>                     
-                    <div class="col-lg-5 pb-3 pt-3"> 
-                        <h2 class="h6 mb-1 text-body">Our Story</h2> 
-                        <h3 class="fw-bold h2 mb-1"><b>Why To Choose The Yellow Cabs ?</b></h3> 
-                        <p class="fw-light h5 mb-4">We are &quot;The Yellow Cabs&quot;, a leading online cab booking service, providing customers with reliable and premium Outstation and Local car rental services.</p> 
-                        <p class="fw-light h5 mb-4">We offers a hassle-free, comfortable and affordable taxi cab service nearby your location to travel within city or outstation across India.</p> 
-                        <p class="fw-light h5 mb-4">We are here to make your travel need an easy and comfortable experience through our online cab booking service. No matter wherever you travel accross India, we have a cab for you.&nbsp;</p> 
+                    <div class="col-lg-6 pb-3 pt-3"> 
+                        <h2 class="h6 mb-1 text-body">Explore</h2> 
+                        <h3 class="fw-bold h2 mb-1"><b>Surat City&nbsp;</b></h3> 
+                        <p class="fw-light h5 mb-4">&apos;Diamond Hub of the arena&apos;, &apos;Embroidery capital of India&apos;, &apos;fabric town of India&apos; as it&apos;s far proudly called; Surat is the quickest growing town inside the global and a effective magnet for fashion moguls, art fanatics and diamond dealers.</p> 
+                        <p class="fw-light h5 mb-4">Inside the mid 15th century, Surat become one of the India&apos;s maximum important port towns. in spite of many historical travails and battles, the metropolis keeps an fascinating medieval charm. historical romanticism, at the side of the coastal graciousness, is what makes Surat an critical traveler vacation spot in Gujarat.</p> 
                     </div>                     
                 </div>                 
-                <section class="bg-light pb-5 pt-5"> 
-                    <h2 class="h5 mb-1 text-body text-center">Here are some&nbsp;</h2> 
-                    <h3 class="font-weight-bold h2 mb-1 text-center">More Reasons to Choose Us</h3> 
-                    <div class="container pt-2"> 
-                        <div class="justify-content-center row"> 
-                            <div class="col-md-6 col-xl-4 pb-3 pt-3"> 
-                                <div> 
-                                    <h2 class="align-items-center d-flex fw-bold h4 mb-3 text-dark"><span class="display-4 fw-bold me-2 text-primary">1.</span><span>Experienced Drivers</span></h2> 
-                                    <p class="display-5 text-body">We provide most experienced and professional drivers to assure the safest and joyful journey of yours.</p> 
-                                </div>                                 
-                            </div>                             
-                            <div class="col-md-6 col-xl-4 pb-3 pt-3"> 
-                                <div> 
-                                    <h2 class="align-items-center d-flex fw-bold h4 mb-3 text-dark"><span class="display-4 fw-bold me-2 text-primary">2.</span><span>Transparent Billing</span></h2> 
-                                    <p class="display-5 text-body">Are you got fustrated of extra hidden charges of other cab bookig services ? If yes then give us a try because we provide most tranparent billing with no hidden charges.</p> 
-                                </div>                                 
-                            </div>                             
-                            <div class="col-md-6 col-xl-4 pb-3 pt-3"> 
-                                <div> 
-                                    <h2 class="align-items-center d-flex fw-bold h4 mb-3 text-dark"><span class="display-4 fw-bold me-2 text-primary">3.</span><span>Clean and Safest Cars</span></h2> 
-                                    <p class="display-5 text-body">We provide most hygenic and clean cars to make your journey a healthy one. Also our cars are equipped with best in class safety features.</p> 
+                <section class="bg-light pb-2 pt-2 text-center text-lg-left"> 
+                    <div class="container pb-4 pt-4"> 
+                        <div class="align-items-center row"> 
+                            <div class="col-lg-12 "> 
+                                <div class="pb-3 pt-3"> 
+                                    <h3 class="font-weight-bold h4 text-left">Things to Do in Surat :</h3> 
+                                    <p class="h5 mb-0 text-body text-left">⦿ Enjoy a beach walk at Tithal Beach</p> 
+                                    <p class="h5 mb-0 text-body text-left">⦿ Try some scrumptious vegetarian Gujarati snacks at the nearest restaurant.</p> 
+                                    <p class="h5 mb-0 text-body text-left">⦿ See the azure sky filled with different colours during the International Kite Festival.</p> 
+                                    <p class="h5 mb-0 text-body text-left">⦿ Visit Diamond market, which polishes 80% of world&apos;s diamond.<br></p> 
                                 </div>                                 
                             </div>                             
                         </div>                         
                     </div>                     
                 </section>                 
-                <div class="align-items-center  row"> 
-                    <div class="col-lg-6 me-auto pb-3 pt-3 text-center"> 
-                        <img src="images/10996.jpg"/> 
-                    </div>                     
-                    <div class="col-lg-5 pb-3 pt-3"> 
-                        <h3 class="fw-bold h2 mb-1"><b>Are You Planning For Your Next Trip ?</b></h3> 
-                        <p class="fw-light h5 mb-4">Our cab service will help you to explore your destination with all must visit places and authentic local cuisine of your destination.</p> 
-                        <p class="fw-light h5 mb-4">Do need a corporate rental ? then no worries ! We also provide corporate car rental service for your business needs.</p> 
-                        <p class="fw-light h5 mb-4">Are you planning to take a stay at your destination location ? No problem, Try our one way outstation service and pay only one-sided fare.</p> 
-                    </div>                     
-                </div>                 
             </div>             
         </section>         
-        <section class="bg-light pb-5 pt-5 text-center"> 
-            <h2 class="h6 mb-1 text-body">Take a Look at Our&nbsp;</h2> 
-            <h3 class="font-weight-bold h2 mb-1">Evergrowing Base</h3> 
-            <div class="container"> 
-                <div class="justify-content-center row"> 
-                    <div class="col-lg-3 col-sm-6 pb-3 pt-3"> 
-                        <div class="bg-white pb-5 pe-3 ps-3 pt-5 text-dark"> 
-                            <img src="images/location.png"/> 
-                            <h2 class="fw-bold h2 mb-0 pt-2">90+</h2> 
-                            <p class="h4 mb-0 mt-0">Cities</p> 
-                        </div>                         
-                    </div>                     
-                    <div class="col-lg-3 col-sm-6 pb-3 pt-3"> 
-                        <div class="bg-white pb-5 pe-3 ps-3 pt-5 text-dark"> 
-                            <img src="images/taxi-driver.png"/> 
-                            <h2 class="fw-bold h2 mb-0 pt-2">5k+</h2> 
-                            <p class="h4 mb-0 mt-0">Driver Partners</p> 
-                        </div>                         
-                    </div>                     
-                    <div class="col-lg-3 col-sm-6 pb-3 pt-3"> 
-                        <div class="bg-white pb-5 pe-3 ps-3 pt-5 text-dark"> 
-                            <img src="images/customer-feedback.png"/> 
-                            <h2 class="fw-bold h2 mb-0 pt-2">90k+</h2> 
-                            <p class="h4 mb-0 mt-0">Happy Customers</p> 
-                        </div>                         
-                    </div>                     
-                </div>                 
-            </div>             
-        </section>         
-        <section class="bg-light pb-5 pt-5 text-body text-center"> 
-            <h2 class="h6 mb-1 text-body">See What Our&nbsp;</h2> 
-            <h3 class="font-weight-bold h2 mb-1">Customers Speaks</h3> 
-            <div class="container pb-3 position-relative pt-3"> 
-                <div class="row"> 
-                    <div class="col-lg-8 ml-auto mr-auto"> 
-                        <div id="carousel4" class="carousel slide" data-ride="carousel"> 
-                            <div class="carousel-inner"> 
-                                <div class="carousel-item active"> 
-                                    <svg viewBox="0 0 24 24" fill="currentColor" height="50" width="50" class="mb-3 text-warning"> 
-                                        <path d="M23 1V5.06504C21.9136 5.67931 21.0807 6.43812 20.5012 7.34146C19.958 8.24481 19.5416 9.20235 19.2519 10.2141C18.9621 11.2258 18.8173 12.346 18.8173 13.5745H23V22.4634H14.0914V16.935C14.0914 13.6107 14.3992 11.0813 15.0148 9.34688C15.6667 7.61246 16.6444 6.02258 17.9481 4.57723C19.2519 3.09575 20.9358 1.90334 23 1ZM9.90864 1V5.06504C8.82222 5.67931 7.9893 6.43812 7.40988 7.34146C6.83045 8.24481 6.39588 9.20235 6.10617 10.2141C5.81646 11.2258 5.67161 12.346 5.67161 13.5745H9.90864V22.4634H1V16.935C1 13.6107 1.30782 11.0813 1.92346 9.34688C2.57531 7.61246 3.55309 6.02258 4.85679 4.57723C6.16049 3.09575 7.84444 1.90334 9.90864 1Z"></path>                                         
-                                    </svg>                                     
-                                    <p class="font-weight-light h5 mb-4">I often use The Yellow Cab's services for my corporate travel needs. Their service and affordability is top notch with highst ride comfort and security.</p> 
-                                    <h3 class="font-weight-bold h4 mb-1 text-warning">Wilson Savaliya</h3> 
-                                    <h4 class="font-weight-normal h6 mb-3">Junagadh</h4> 
-                                </div>                                 
-                                <div class="carousel-item"> 
-                                    <svg viewBox="0 0 24 24" fill="currentColor" class="mb-3 text-warning" width="50" height="50"> 
-                                        <path d="M23 1V5.06504C21.9136 5.67931 21.0807 6.43812 20.5012 7.34146C19.958 8.24481 19.5416 9.20235 19.2519 10.2141C18.9621 11.2258 18.8173 12.346 18.8173 13.5745H23V22.4634H14.0914V16.935C14.0914 13.6107 14.3992 11.0813 15.0148 9.34688C15.6667 7.61246 16.6444 6.02258 17.9481 4.57723C19.2519 3.09575 20.9358 1.90334 23 1ZM9.90864 1V5.06504C8.82222 5.67931 7.9893 6.43812 7.40988 7.34146C6.83045 8.24481 6.39588 9.20235 6.10617 10.2141C5.81646 11.2258 5.67161 12.346 5.67161 13.5745H9.90864V22.4634H1V16.935C1 13.6107 1.30782 11.0813 1.92346 9.34688C2.57531 7.61246 3.55309 6.02258 4.85679 4.57723C6.16049 3.09575 7.84444 1.90334 9.90864 1Z"></path>                                         
-                                    </svg>                                     
-                                    <p class="font-weight-light h5 mb-4">My profession required frequent solo trips to diffrent cities, And it is important for a girl to find a women friendly cab thats why I always prefer The Yellow Cabs because they have decent drivers so I always feel safe while traveling alone.</p> 
-                                    <h3 class="font-weight-bold h4 mb-1 text-warning">Nikita shah</h3> 
-                                    <h4 class="font-weight-normal h6 mb-3">Ahmedabad</h4> 
-                                </div>                                 
-                                <div class="carousel-item"> 
-                                    <svg viewBox="0 0 24 24" fill="currentColor" class="mb-3 text-warning" width="50" height="50"> 
-                                        <path d="M23 1V5.06504C21.9136 5.67931 21.0807 6.43812 20.5012 7.34146C19.958 8.24481 19.5416 9.20235 19.2519 10.2141C18.9621 11.2258 18.8173 12.346 18.8173 13.5745H23V22.4634H14.0914V16.935C14.0914 13.6107 14.3992 11.0813 15.0148 9.34688C15.6667 7.61246 16.6444 6.02258 17.9481 4.57723C19.2519 3.09575 20.9358 1.90334 23 1ZM9.90864 1V5.06504C8.82222 5.67931 7.9893 6.43812 7.40988 7.34146C6.83045 8.24481 6.39588 9.20235 6.10617 10.2141C5.81646 11.2258 5.67161 12.346 5.67161 13.5745H9.90864V22.4634H1V16.935C1 13.6107 1.30782 11.0813 1.92346 9.34688C2.57531 7.61246 3.55309 6.02258 4.85679 4.57723C6.16049 3.09575 7.84444 1.90334 9.90864 1Z"></path>                                         
-                                    </svg>                                     
-                                    <p class="font-weight-light h5 mb-4">Me and my friends are very travel enthusiast people, We often travel to many places across India and we always prefer The Yellow Cabs because of their affordable rates and total facilities. I strongly recommend The Yellow Cabs.</p> 
-                                    <h3 class="font-weight-bold h4 mb-1 text-warning">Aakash khatri</h3> 
-                                    <h4 class="font-weight-normal h6 mb-3">Mumbai</h4> 
-                                </div>                                 
-                            </div>                             
-                            <ol class="carousel-indicators position-relative"> 
-                                <li data-target="#carousel4" data-slide-to="0" class="active bg-warning"></li>                                 
-                                <li data-target="#carousel4" data-slide-to="1" class="bg-warning"></li>                                 
-                                <li data-target="#carousel4" data-slide-to="2" class="bg-warning"></li>                                 
-                            </ol>                             
-                        </div>                         
-                    </div>                     
-                </div>                 
-            </div>             
-        </section>         
-        <section class="bg-white pb-5 pt-5 text-body text-center"> 
-            <h2 class="h6 mb-1 text-body">Explore&nbsp;</h2> 
-            <h3 class="font-weight-bold h2 ">Popular Cities</h3> 
-            <div class="container pb-3 position-relative pt-3 text-body"> 
-                <div class="row"> 
-                    <div class="col-6 col-md-2"> 
-                        <a href="ahmedabad.php"><h4 class="text-body">AHMEDABAD</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
-                        <a href="surat.php"><h4 class="text-body">SURAT</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
-                        <a href="vadodara.php"><h4 class="text-body">VADODARA</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
-                        <a href="rajkot.php"><h4 class="text-body">RAJKOT</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
-                        <a href="gandhidham.php"><h4 class="text-body">GANDHIDHAM</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
-                        <a href="mumbai.php"><h4 class="text-body">MUMBAI</h4></a> 
-                    </div>                     
-                </div>                 
-                <div class="row"> 
-                    <div class="col-6 col-md-2"> 
-                        <a href="pune.php"><h4 class="text-body">PUNE</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
-                        <a href="nashik.php"><h4 class="text-body">NASHIK</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
-                        <a href="udaipur.php"><h4 class="text-body">UDAIPUR</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
-                        <a href="jaipur.php"><h4 class="text-body">JAIPUR</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
-                        <a href="bhopal.php"><h4 class="text-body">BHOPAL</h4></a> 
-                    </div>                     
-                    <div class="col-6 col-md-2"> 
-                        <a href="indore.php"><h4 class="text-body">INDORE</h4></a> 
-                    </div>                     
-                </div>                 
-            </div>             
-        </section>         
-        <section class="bg-warning content-block-nopad footer-wrap-1-1"> 
-            <div class="container footer-1-1 pb-2 pt-3"> 
-                <h2 class="h6 mb-1 text-body text-center">Explore&nbsp;</h2> 
-                <h3 class="font-weight-bold h2  text-body text-center">Popular Routes</h3> 
-                <!-- /.row -->                 
-            </div>             
-            <!-- /.container -->             
-        </section>         
-        <section class="content-block-nopad footer-wrap-1-1"> 
-            <div class="container footer-1-1 mt-0 pt-4"> 
-                <!-- /.row -->                 
-                <div class="row"> 
-                    <div class="col-md-4 col-xl-4"> 
-                        <h4 class="text-body text-left">AHMEDABAD</h4> 
-                        <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body"><a href="javascript:void(1)" onclick="setFromTocity('<?php echo get_city_id('Ahmedabad'); ?>','<?php echo get_city_id('Vadodara'); ?>')">● AHMEDABAD TO VADODARA</a></li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO SURAT</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO UDAIPUR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO MUMBAI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● AHMEDABAD TO INDORE</li>                             
-                        </ul>                         
-                    </div>                     
-                    <div class="col-md-4 col-xl-4"> 
-                        <h4 class="text-body text-left">SURAT</h4> 
-                        <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● SURAT TO MUMBAI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● SURAT TO AHMEDABAD</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● SURAT TO PUNE</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● SURAT TO VADODARA</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● SURAT TO INDORE</li>                             
-                        </ul>                         
-                    </div>                     
-                    <div class="col-md-4 col-xl-4"> 
-                        <h4 class="text-body text-left">VADODARA</h4> 
-                        <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● VADODARA TO AHMEDABAD</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● VADODARA TO SURAT</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● VADODARA TO MUMBAI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● VADODARA TO UDAIPUR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● VADODARA TO INDORE</li>                             
-                        </ul>                         
-                    </div>                     
-                    <div class="col-md-4 col-xl-4"> 
-                        <h4 class="text-body text-left">RAJKOT</h4> 
-                        <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● RAJKOT TO AHMEDABAD</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● RAJKOT TO GANDHIDHAM</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● RAJKOT TO SURAT</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● RAJKOT TO BHAVNAGAR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● RAJKOT TO MUMBAI</li>                             
-                        </ul>                         
-                    </div>                     
-                    <div class="col-md-4 col-xl-4"> 
-                        <h4 class="text-body text-left">MUMBAI</h4> 
-                        <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● MUMBAI TO PUNE</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● MUMBAI TO LONAVALA</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● MUMBAI TO NASHIK</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● MUMBAI TO SURAT</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● MUMBAI TO AHMEDABAD</li>                             
-                        </ul>                         
-                    </div>                     
-                    <div class="col-md-4 col-xl-4"> 
-                        <h4 class="text-body text-left">PUNE</h4> 
-                        <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● PUNE TO MUMBAI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● PUNE TO MAHABALESWAR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● PUNE TO NASHIK</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● PUNE TO SURAT</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● PUNE TO AHMEDABAD</li>                             
-                        </ul>                         
-                    </div>                     
-                    <div class="col-md-4 col-xl-4"> 
-                        <h4 class="text-body text-left">UDAIPUR</h4> 
-                        <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● UDAIPUR TO JODHPUR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● UDAIPUR TO JAIPUR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● UDAIPUR TO AHMEDABAD</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● UDAIPUR TO VADODARA</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● UDAIPUR TO BHILWARA</li>                             
-                        </ul>                         
-                    </div>                     
-                    <div class="col-md-4 col-xl-4"> 
-                        <h4 class="text-body text-left">JAIPUR</h4> 
-                        <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● JAIPUR TO UDAIPUR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● JAIPUR TO JODHPUR</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● JAIPUR TO AHMEDABAD</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● JAIPUR TO DELHI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● JAIPUR TO BHILWARA</li>                             
-                        </ul>                         
-                    </div>                     
-                    <div class="col-md-4 col-xl-4"> 
-                        <h4 class="text-body text-left">INDORE</h4> 
-                        <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● INDORE TO BHOPAL</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● INDORE TO MUMBAI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● INDORE TO AHMEDABAD</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● INDORE TO VADODARA</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● INDORE TO NAGPUR</li>                             
-                        </ul>                         
-                    </div>                     
-                    <div class="col-md-4 col-xl-4"> 
-                        <h4 class="text-body text-left">BHOPAL</h4> 
-                        <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● BHOPAL TO MUMBAI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● BHOPAL TO INDORE</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● BHOPAL TO AHMEDABAD</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● BHOPAL TO UJJAIN</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● BHOPAL TO VADODARA</li>                             
-                        </ul>                         
-                    </div>                     
-                    <div class="col-md-4 col-xl-4"> 
-                        <h4 class="text-body text-left">GANDHIDHAM</h4> 
-                        <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● GANDHIDHAM TO BHUJ</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● GANDHIDHAM TO MUNDRA</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● GANDHIDHAM TO RAJKOT</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● GANDHIDHAM TO AHMEDABAD</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● GANDHIDHAM TO MUMBAI</li>                             
-                        </ul>                         
-                    </div>                     
-                    <div class="col-md-4 col-xl-4"> 
-                        <h4 class="text-body text-left">NASHIK</h4> 
-                        <ul> 
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● NASHIK TO MUMBAI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● NASHIK TO PUNE</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● NASHIK TO VAPI</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● NASHIK TO SURAT</li>                             
-                            <li style="border:rgba(0, 0, 0, 0.19);" class="h6 text-body">● NASHIK TO INDORE</li>                             
-                        </ul>                         
-                    </div>                     
-                </div>                 
-            </div>             
-            <!-- /.container -->             
-        </section>         
-        <div class="container"> 
-            <div class="row d_flex"> 
-</div>             
-        </div>         
-    </div>     
+    </div> 
     <!-- end our  section -->     
     <!-- about -->     
     <!-- end about -->     
