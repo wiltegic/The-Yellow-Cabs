@@ -152,6 +152,9 @@ if(isset($_REQUEST['select_car'])){
                     <?php 
                         for($i=0;$i<count($carArray);$i++){
                             $eight_hrs= $carArray[$i]['eight_hrs'];
+                            if(!empty($eight_hrs) || $eight_hrs >0){
+
+                            
                             $rate= $carArray[$i]['rate'];
                     ?>
                         <div class="align-items-center mb-2 ml-1 mr-1 row" style="border: 1px solid #F8BC20; border-radius: 5px;"> 
@@ -205,12 +208,16 @@ if(isset($_REQUEST['select_car'])){
                                 <button type="button" class="btn btn-warning" onclick="setCarvalue('<?php echo $carArray[$i]['car']; ?>','<?php echo $carArray[$i]['car_type']; ?>','<?php echo $carArray[$i]['id']; ?>','8_Hrs_80_KM','<?php echo $eight_hrs; ?>','80')">Book Now</button>                                 
                             </div>                             
                         </div>
-                    <?php } ?>
+                    <?php 
+                        }
+                    }
+                    ?>
                     </div>
                     <div class="fade pt-0 tab-pane" id="pills-12" role="tabpanel" aria-labelledby="pills-12-tab">
                     <?php 
                         for($i=0;$i<count($carArray);$i++){
                             $twelve_hrs= $carArray[$i]['twelve_hrs'];
+                            if(!empty($twelve_hrs) || $twelve_hrs >0){
                             $rate= $carArray[$i]['rate'];
                     ?>
                         <div class="align-items-center mb-2 ml-1 mr-1 row" style="border: 1px solid #F8BC20; border-radius: 5px;"> 
@@ -264,7 +271,10 @@ if(isset($_REQUEST['select_car'])){
                             <button type="button" class="btn btn-warning" onclick="setCarvalue('<?php echo $carArray[$i]['car']; ?>','<?php echo $carArray[$i]['car_type']; ?>','<?php echo $carArray[$i]['id']; ?>','12_Hrs_120_KM','<?php echo $twelve_hrs; ?>','120')">Book Now</button>                                 
                             </div>                             
                         </div>
-                    <?php } ?>
+                    <?php 
+                        }
+                    }
+                    ?>
                     </div>
                 </div>
             </div>             
