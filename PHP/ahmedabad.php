@@ -417,7 +417,7 @@ $city_id= get_city_id('Ahmedabad');
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>     
     <!-- <script src="js/bootstrap-datepicker.js"></script>      -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js'></script>
-    <script src='https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js'></script>
+    <script src='js/bootstrap-datetimepicker.js'></script>
     
     <script>
         // $('#pickup_date').datepicker({
