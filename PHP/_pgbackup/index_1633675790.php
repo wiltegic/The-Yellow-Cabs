@@ -69,7 +69,7 @@ $cityArray= get_city_dropdown();
                     </div>                     
                     <div class="col-md-4"> 
                         <div class="d-none d-sm-block pl-0 sign_btn text-right text-sm-right"> 
-                            <a href="inquirey.php" class="pl-3 pr-3" style="font-size: 120%;">Inquirey</a> 
+                            <a href="inquirey.php" class="pl-3 pr-3" style="font-size: 120%;">Inquiry</a> 
                         </div>                         
                     </div>                     
                 </div>                 
