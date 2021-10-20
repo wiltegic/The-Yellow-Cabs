@@ -1,5 +1,12 @@
 $(function () {
 
+		$("#mobile_number,#mobile_number_local").attr("maxlength", "10");
+		$("#mobile_number,#mobile_number_local").attr("minlength", "10");
+		// $("#mobile_number").blur(function(){
+		// 	res = formatPhoneNumber($("#phone_mobile").val());
+		// 	$("#mobile_number").val(res);
+		// });
+		
 		var startString= moment().add('minutes',90).format('YYYY-MM-DD hh:mm a');
 		var endString= moment(startString, "YYYY-MM-DD").add('days', 1);
 		var time_slotes= intervals(startString, endString);
@@ -111,3 +118,12 @@ $(function () {
 		},200);
 	}
 
+	function formatPhoneNumber(phoneNumberString) {
+		var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+		var match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/);
+		if (match) {
+		  var intlCode = (match[1] ? '+1 ' : '');
+		  return [intlCode, '(', match[2], ') ', match[3], '-', match[4]].join('');
+		}
+		return null;
+	  }

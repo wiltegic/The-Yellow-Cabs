@@ -18,6 +18,13 @@ if(isset($_REQUEST['select_car'])){
     $carArray= get_car_list();
     // echo"<pre>";print_r($carArray);exit;
 
+    $date1 = date_format(date_create($pickup_date),"Y-m-d");
+    $date2 = date_format(date_create($return_date),"Y-m-d");
+    
+    $diff = abs(strtotime($date2) - strtotime($date1));
+
+    $diff_days= round($diff / (60 * 60 * 24));
+    $diff_days= ($diff_days==0) ? 1 : $diff_days;
 }
 
 
@@ -148,11 +155,37 @@ if(isset($_REQUEST['select_car'])){
                       $result= get_city_distance($from_city_id,$drop_city_id,$carArray[$i]['id']);
                       $minimum_range= $result['minimum_range'];
                       $distance= $result['distance'];
-                      if($trip=="roundtrip")$distance= ($distance*2);
-                      if($minimum_range>$result['distance']){
-                        $distance=$minimum_range;
+                      if($trip=="roundtrip"){
+                        
+                            $total_min_range= ($minimum_range*$diff_days);
+                            $total_distance= ($distance*$diff_days);
+                            if($total_min_range > $total_distance){
+                                $distance= $total_min_range;
+                            }else{
+                                $distance= $total_distance;
+                            }
+                            $total= ($distance * $result['rate']);
+                            $total= $total + (300*$diff_days);
+                      }else{
+                        $distance= $result['distance'];
+                        if($carArray[$i]['car']=="Swift"){
+                            $total= $result['swift_trip_fare'];
+                        }else if($carArray[$i]['car']=="Etios"){
+                            $total= $result['ertiga_trip_fare'];
+                        }else if($carArray[$i]['car']=="Ertiga"){
+                            $total= $result['etios_trip_fare'];
+                        }else if($carArray[$i]['car']=="Innova"){
+                            $total= $result['innova_trip_fare'];
+                        }
+                        
+                        
+                        if($total <=0){
+                            $distance= $result['distance'];
+                            $total= ($distance * $result['rate']);
+                        }
                       }
-                      $total= ($distance * $result['rate']);
+                      
+                      
                 ?>
                 <div class="align-items-center mb-2 ml-1 mr-1 row" style="border: 1px solid #F8BC20; border-radius: 5px;"> 
                     <div class="col-8 col-lg-4 me-auto pb-3 pt-3">

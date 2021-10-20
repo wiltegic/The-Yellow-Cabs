@@ -46,7 +46,7 @@ function get_city_id($city_name){
 function get_car_list(){
 	global $db;
 
-	$query="SELECT ap.id,ap.name,apc.name as cat_name,eight_hrs_c,twelve_hrs_c, ap.price,ap.product_image FROM `aos_products` as ap LEFT JOIN aos_products_cstm on ap.id=aos_products_cstm.id_c LEFT JOIN aos_product_categories as apc on ap.aos_product_category_id=apc.id WHERE ap.deleted=0 and apc.deleted=0 ORDER BY ap.name ASC ";
+	$query="SELECT ap.id,ap.name,apc.name as cat_name,eight_hrs_c,twelve_hrs_c, ap.price,ap.product_image FROM `aos_products` as ap LEFT JOIN aos_products_cstm on ap.id=aos_products_cstm.id_c LEFT JOIN aos_product_categories as apc on ap.aos_product_category_id=apc.id WHERE ap.deleted=0 and apc.deleted=0 ORDER BY ap.price ASC";
 	$result= $db->query($query);
 	$carArray=array();
 	$i=0;
@@ -84,6 +84,10 @@ function get_city_distance($from_city,$to_city,$car_id){
 		$row= $result->fetch_assoc();
 		$response['status']= "success";
 		$response['distance']= $row['distance'];
+		$response['swift_trip_fare']= (int)$row['swift_trip_fare'];
+		$response['ertiga_trip_fare']= (int)$row['ertiga_trip_fare'];
+		$response['etios_trip_fare']= (int)$row['etios_trip_fare'];
+		$response['innova_trip_fare']= (int)$row['innova_trip_fare'];
 		
 	}else{
 		$response['status']= "fail";
