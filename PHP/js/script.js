@@ -31,7 +31,7 @@ $(function () {
 
 		$('#return_date').datetimepicker({
 			format: 'DD-MM-YYYY',
-			minDate: moment().add('days', 1)
+			minDate: moment().add('minutes',90)
 		});
 
 		// $('#pickup_time').datetimepicker({
@@ -50,7 +50,8 @@ $(function () {
 			var pickup_date= document.getElementById("pickup_date").value;
 			var today = moment().format('DD-MM-YYYY');
 			$('#return_date').data("DateTimePicker").minDate(pickup_date);
-
+			$('#return_date').val("");
+			
 			var startString= moment(pickup_date, "YYYY-MM-DD");
 			if(today==pickup_date){
 				var startString= moment().add('minutes',90).format('YYYY-MM-DD hh:mm a');

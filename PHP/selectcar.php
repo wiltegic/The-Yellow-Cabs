@@ -24,7 +24,8 @@ if(isset($_REQUEST['select_car'])){
     $diff = abs(strtotime($date2) - strtotime($date1));
 
     $diff_days= round($diff / (60 * 60 * 24));
-    $diff_days= ($diff_days==0) ? 1 : $diff_days;
+    $diff_days++;
+    // $diff_days= ($diff_days==0) ? 1 : $diff_days;
 }
 
 
@@ -209,9 +210,9 @@ if(isset($_REQUEST['select_car'])){
                             <span class="h4">₹</span>
                         </div>
                         <div>
-                            <span class="h5"><u data-toggle="modal" data-target="#modal2">Fare Summery</u></span>
+                            <span class="h5"><u data-toggle="modal" data-target="#modal<?php echo $i; ?>">Fare Summery</u></span>
                         </div>
-                        <div class="modal pg-show-modal fade" id="modal2">
+                        <div class="modal pg-show-modal fade" id="modal<?php echo $i; ?>">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
