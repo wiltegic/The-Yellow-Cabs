@@ -3,7 +3,8 @@ include ("function.php");
 
 if(isset($_REQUEST['select_car'])){
     // echo"<pre>";print_r($_REQUEST);exit;
-
+    $response= addBookingToCRM($_REQUEST, "/index.php?entryPoint=addBookingLead");
+    
     $trip= $_REQUEST['triptype'];
     $from_city_id= $_REQUEST['pickup_city'];
     $drop_city_id= $_REQUEST['drop_city'];
@@ -222,10 +223,18 @@ if(isset($_REQUEST['select_car'])){
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <p class="mt-0 text-left"><u>Fare :</u> <?php echo $result['rate']; ?> ₹ Per KM</p>
-                                        <p class="text-left"><u>Minimum Charged Distance :</u> <?php echo $result['minimum_range']; ?> Kms</p>
-                                        <p class="text-left"><u>Inclusion :</u> Driver Food &amp; Stay Charge</p>
-                                        <p class="mb-0 text-left"><u>Exclusion :</u> Toll tax ,State tax , Parking charge , Airport Parking Charge</p>
+                                        <?php if($trip=="oneway"){ ?>
+                                            <p class="mt-0 text-left"><u>Extra KM Charges :</u> <?php echo $result['rate']; ?> ₹ Per KM</p>
+                                            <p class="text-left"><u>Inclusion :</u> Toll tax ,State tax ,Driver Food &amp; Stay Charge</p>
+                                            <p class="mb-0 text-left"><u>Exclusion :</u>  Parking charge , Airport Parking Charge</p>
+                                        <?php }else{ ?>
+                                            <p class="mt-0 text-left"><u>Fare :</u> <?php echo $result['rate']; ?> ₹ Per KM</p>
+                                            <p class="text-left"><u>Minimum Charged Distance :</u> <?php echo $result['minimum_range']; ?> Kms</p>
+                                            <p class="text-left"><u>Inclusion :</u> Driver Food &amp; Stay Charge</p>
+                                            <p class="mb-0 text-left"><u>Exclusion :</u> Toll tax ,State tax , Parking charge , Airport Parking Charge</p>
+                                        <?php } ?>
+                                        
+                                        
                                     </div>
                                 </div>
                             </div>

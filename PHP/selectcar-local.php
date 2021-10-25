@@ -4,6 +4,8 @@ include ("function.php");
 if(isset($_REQUEST['select_car'])){
     // echo"<pre>";print_r($_REQUEST);exit;
 
+    $response= addBookingToCRM($_REQUEST, "/index.php?entryPoint=addBookingLead");
+
     $trip= $_REQUEST['triptype'];
     $from_city_id= $_REQUEST['pickup_city_local'];
     // $drop_city_id= $_REQUEST['drop_city'];
